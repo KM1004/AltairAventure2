@@ -24,18 +24,24 @@ position = Vector2( 932, 507 )
 [node name="PalmTreeBig" type="Node" parent="."]
 
 [node name="1" parent="PalmTreeBig" instance=ExtResource( 5 )]
-position = Vector2( 669, 469 )
+position = Vector2( 1505, 133 )
 
 [node name="2" parent="PalmTreeBig" instance=ExtResource( 5 )]
-position = Vector2( 702, 518 )
+position = Vector2( 151, 143 )
 
 [node name="3" parent="PalmTreeBig" instance=ExtResource( 5 )]
-position = Vector2( 766, 574 )
+position = Vector2( 172, 421 )
 
 [node name="4" parent="PalmTreeBig" instance=ExtResource( 5 )]
-position = Vector2( 815, 542 )
+position = Vector2( 1193, 187 )
 
 [node name="SmallPalmTree" type="Node" parent="."]
 
 [node name="1" parent="SmallPalmTree" instance=ExtResource( 4 )]
-position = Vector2( 849, 551 )
+position = Vector2( 1409, 351 )
+
+[node name="2" parent="SmallPalmTree" instance=ExtResource( 4 )]
+position = Vector2( 461, 241 )
+
+[node name="3" parent="SmallPalmTree" instance=ExtResource( 4 )]
+position = Vector2( 59.0001, 304 )

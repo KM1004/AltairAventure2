@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/player shoot arrow.mp3-a072abb7d00442182fc88b90f47054a3.mp3str"
+
+[deps]
+
+source_file="res://Media/AltairSFX/player shoot arrow.mp3"
+dest_files=[ "res://.import/player shoot arrow.mp3-a072abb7d00442182fc88b90f47054a3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

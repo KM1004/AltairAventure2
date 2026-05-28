@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://ChatGPT Image May 13, 2026, 10_29_04 AM.png" type="Texture" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SmallPalmTree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PalmTreeBig.tscn" type="PackedScene" id=5]
+
+[node name="Beach" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 13, 0, 1835058, 13, 0 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 836, 470 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 932, 507 )
+
+[node name="PalmTreeBig" type="Node" parent="."]
+
+[node name="1" parent="PalmTreeBig" instance=ExtResource( 5 )]
+position = Vector2( 669, 469 )
+
+[node name="2" parent="PalmTreeBig" instance=ExtResource( 5 )]
+position = Vector2( 702, 518 )
+
+[node name="3" parent="PalmTreeBig" instance=ExtResource( 5 )]
+position = Vector2( 766, 574 )
+
+[node name="4" parent="PalmTreeBig" instance=ExtResource( 5 )]
+position = Vector2( 815, 542 )
+
+[node name="SmallPalmTree" type="Node" parent="."]
+
+[node name="1" parent="SmallPalmTree" instance=ExtResource( 4 )]
+position = Vector2( 849, 551 )

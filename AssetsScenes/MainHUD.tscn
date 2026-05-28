@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AssetsScenes/Heart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AssetsScenes/Weapons.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LivesHUD" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="LivesHUD"]
+margin_right = 384.0
+margin_bottom = 72.0
+
+[node name="Heart" parent="LivesHUD/Panel" instance=ExtResource( 1 )]
+margin_left = 16.0
+margin_right = 56.0
+
+[node name="Heart2" parent="LivesHUD/Panel" instance=ExtResource( 1 )]
+margin_left = 88.0
+margin_right = 128.0
+
+[node name="Heart3" parent="LivesHUD/Panel" instance=ExtResource( 1 )]
+margin_left = 160.0
+margin_right = 200.0
+
+[node name="Heart4" parent="LivesHUD/Panel" instance=ExtResource( 1 )]
+margin_left = 232.0
+margin_right = 272.0
+
+[node name="Heart5" parent="LivesHUD/Panel" instance=ExtResource( 1 )]
+margin_left = 304.0
+margin_right = 344.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer2"]
+margin_left = 1048.0
+margin_top = 8.0
+margin_right = 1263.0
+margin_bottom = 72.0
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer3"]
+margin_left = 24.0
+margin_top = 616.0
+margin_right = 224.0
+margin_bottom = 696.0
+
+[node name="Weapons" parent="CanvasLayer3/Panel" instance=ExtResource( 2 )]
+margin_left = 24.0
+margin_top = 8.0
+margin_right = 24.0
+margin_bottom = 8.0

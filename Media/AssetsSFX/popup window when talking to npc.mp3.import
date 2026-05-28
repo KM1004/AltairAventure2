@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/popup window when talking to npc.mp3-14481e9a298ab9fca5f09bb89170ca8b.mp3str"
+
+[deps]
+
+source_file="res://Media/AssetsSFX/popup window when talking to npc.mp3"
+dest_files=[ "res://.import/popup window when talking to npc.mp3-14481e9a298ab9fca5f09bb89170ca8b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

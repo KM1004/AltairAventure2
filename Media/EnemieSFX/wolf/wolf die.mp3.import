@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/wolf die.mp3-c39114016b8f1cc1378bbe39f9ac7b1a.mp3str"
+
+[deps]
+
+source_file="res://Media/EnemieSFX/wolf/wolf die.mp3"
+dest_files=[ "res://.import/wolf die.mp3-c39114016b8f1cc1378bbe39f9ac7b1a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

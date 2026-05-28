@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/slime die.mp3-8c2fae80e6e70eaa18990d9c567c5fa9.mp3str"
+
+[deps]
+
+source_file="res://Media/EnemieSFX/slime/slime die.mp3"
+dest_files=[ "res://.import/slime die.mp3-8c2fae80e6e70eaa18990d9c567c5fa9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

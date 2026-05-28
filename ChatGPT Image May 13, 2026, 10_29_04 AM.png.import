@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/ChatGPT Image May 13, 2026, 10_29_04 AM.png-5dc592894c6c7bc7ffea9d73de3eda32.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://ChatGPT Image May 13, 2026, 10_29_04 AM.png"
+dest_files=[ "res://.import/ChatGPT Image May 13, 2026, 10_29_04 AM.png-5dc592894c6c7bc7ffea9d73de3eda32.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

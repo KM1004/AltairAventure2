@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/player walking runnung.mp3-4d2f9385e67e59f7be4ecd9c7ada85d8.mp3str"
+
+[deps]
+
+source_file="res://Media/AltairSFX/player walking runnung.mp3"
+dest_files=[ "res://.import/player walking runnung.mp3-4d2f9385e67e59f7be4ecd9c7ada85d8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

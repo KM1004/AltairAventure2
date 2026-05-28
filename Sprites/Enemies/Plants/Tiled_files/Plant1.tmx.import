@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/Plant1.tmx-86b4bcc3247866b327ee3df098008d33.scn"
+
+[deps]
+
+source_file="res://Sprites/Enemies/Plants/Tiled_files/Plant1.tmx"
+dest_files=[ "res://.import/Plant1.tmx-86b4bcc3247866b327ee3df098008d33.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""

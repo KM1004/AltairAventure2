@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/orc attack.mp3-c6c1ae36a9ff35f2a43201017fc76e3d.mp3str"
+
+[deps]
+
+source_file="res://Media/EnemieSFX/orc_ogre/orc attack.mp3"
+dest_files=[ "res://.import/orc attack.mp3-c6c1ae36a9ff35f2a43201017fc76e3d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

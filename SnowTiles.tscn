@@ -1,0 +1,584 @@
+[gd_scene load_steps=84 format=2]
+
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Misc/Stairs_1.png" type="Texture" id=1]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Snow_0.png" type="Texture" id=2]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Snow_1.png" type="Texture" id=3]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Snow_3.png" type="Texture" id=4]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Misc/Stairs_0.png" type="Texture" id=5]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Snow_5.png" type="Texture" id=6]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Cliff_Top_Left.png" type="Texture" id=7]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Snow_4.png" type="Texture" id=8]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Trees/Tree_2.png" type="Texture" id=9]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Snow_2.png" type="Texture" id=10]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Cliff_Top.png" type="Texture" id=11]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Cliff_Top_Right.png" type="Texture" id=12]
+[ext_resource path="res://Tiles/SnowLand/Option2/snowspike.png" type="Texture" id=13]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Cliff_Base_Right_1.png" type="Texture" id=14]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Cliff_Left_1.png" type="Texture" id=15]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Cliff_Middle_1.png" type="Texture" id=16]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Cliff_Base_Left_1.png" type="Texture" id=17]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Cliff_Right_1.png" type="Texture" id=18]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Snow/Cliff_Base_1.png" type="Texture" id=19]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Ice_Bottom_Left.png" type="Texture" id=20]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_4.png" type="Texture" id=21]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_9.png" type="Texture" id=22]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Round/Round_Ice_Top.png" type="Texture" id=23]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Right_Inner_Corner_1.png" type="Texture" id=24]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Right_Inner_Corner_2.png" type="Texture" id=25]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Left_Inner_Corner_0.png" type="Texture" id=26]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Top_Inner_Corners_0.png" type="Texture" id=27]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Top_Inner_Corners_2.png" type="Texture" id=28]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_3.png" type="Texture" id=29]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_7.png" type="Texture" id=30]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Left_Inner_Corner_1.png" type="Texture" id=31]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Right_Inner_Corner_0.png" type="Texture" id=32]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Top_Inner_Corners_1.png" type="Texture" id=33]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_10.png" type="Texture" id=34]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_6.png" type="Texture" id=35]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Bottom_Left_Inner_Corner.png" type="Texture" id=36]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_0.png" type="Texture" id=37]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_2.png" type="Texture" id=38]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Round/Round_Ice_Right.png" type="Texture" id=39]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_8.png" type="Texture" id=40]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Bottom_Inner_Corners_1.png" type="Texture" id=41]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Bottom_Inner_Corners_0.png" type="Texture" id=42]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Fences/Fence_Horizontal.png" type="Texture" id=43]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Fences/Fence_Top_Right.png" type="Texture" id=44]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Left_Inner_Corner_2.png" type="Texture" id=45]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Bottom_Inner_Corners_2.png" type="Texture" id=46]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_1.png" type="Texture" id=47]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Inner_Corners_5.png" type="Texture" id=48]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Inner corners/Ice_Bottom_Right_Inner_Corner.png" type="Texture" id=49]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Fences/Fence_Bottom_Right.png" type="Texture" id=50]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Fences/Fence_Top_Left.png" type="Texture" id=51]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Ice_Top_Right.png" type="Texture" id=52]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Misc/Water_Hole_0.png" type="Texture" id=53]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Misc/Water_Hole_1.png" type="Texture" id=54]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Misc/Ice_Square.png" type="Texture" id=55]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Misc/Water_Hole_2.png" type="Texture" id=56]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Misc/Ice_Circle_1.png" type="Texture" id=57]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Ice_Top_Left.png" type="Texture" id=58]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Ice_Top_Middle.png" type="Texture" id=59]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Misc/Ice_Circle.png" type="Texture" id=60]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Misc/Ice_Circle_2.png" type="Texture" id=61]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Fences/Fence_Vertical.png" type="Texture" id=62]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Decoration/Log.png" type="Texture" id=63]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Ice.png" type="Texture" id=64]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Ice_Bottom_Middle.png" type="Texture" id=65]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Ice_Right.png" type="Texture" id=66]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Fences/Fence_Bottom_Left.png" type="Texture" id=67]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Ice_Bottom_Right.png" type="Texture" id=68]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Ice_Left.png" type="Texture" id=69]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Round/Round_Ice_Bottom.png" type="Texture" id=70]
+[ext_resource path="res://Tiles/SnowLand/Snowy Asset Pack/Terrain/Ice/Round/Round_Ice_Left.png" type="Texture" id=71]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9, 10.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id=4]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10.5, 16 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10.5, 16 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10.5, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 10.5, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 5.5, 16 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 6, 16 )
+
+[node name="SnowTiles" type="Node"]
+
+[node name="Snow0" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Snow1" type="Sprite" parent="."]
+position = Vector2( 64, 0 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Snow2" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Snow3" type="Sprite" parent="."]
+position = Vector2( 0, 64 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Snow4" type="Sprite" parent="."]
+position = Vector2( 64, 64 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Snow5" type="Sprite" parent="."]
+position = Vector2( 128, 64 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="CliffTopLeft" type="Sprite" parent="."]
+position = Vector2( 0, 128 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="CliffTop" type="Sprite" parent="."]
+position = Vector2( 64, 128 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="CliffTopRight" type="Sprite" parent="."]
+position = Vector2( 128, 128 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="CliffLeft1" type="Sprite" parent="."]
+position = Vector2( 0, 192 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="CliffMiddle1" type="Sprite" parent="."]
+position = Vector2( 64, 192 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="CliffRight1" type="Sprite" parent="."]
+position = Vector2( 128, 192 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="CliffBaseLeft1" type="Sprite" parent="."]
+position = Vector2( 0, 256 )
+texture = ExtResource( 17 )
+centered = false
+
+[node name="CliffBase1" type="Sprite" parent="."]
+position = Vector2( 64, 256 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="CliffBaseRight1" type="Sprite" parent="."]
+position = Vector2( 128, 256 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Tree2" type="Sprite" parent="."]
+position = Vector2( 0, 320 )
+texture = ExtResource( 9 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 16, 46.5 )
+shape = SubResource( 1 )
+
+[node name="Stairs0" type="Sprite" parent="."]
+position = Vector2( 64, 320 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Stairs1" type="Sprite" parent="."]
+position = Vector2( 128, 320 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Snowspike" type="Sprite" parent="."]
+position = Vector2( 0, 416 )
+texture = ExtResource( 13 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Snowspike"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowspike/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 16, 16 )
+shape = SubResource( 2 )
+
+[node name="Ice" type="Sprite" parent="."]
+position = Vector2( 64, 544 )
+texture = ExtResource( 64 )
+centered = false
+
+[node name="IceBottomLeft" type="Sprite" parent="."]
+position = Vector2( 0, 608 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="IceBottomMiddle" type="Sprite" parent="."]
+position = Vector2( 64, 608 )
+texture = ExtResource( 65 )
+centered = false
+
+[node name="IceBottomRight" type="Sprite" parent="."]
+position = Vector2( 128, 608 )
+texture = ExtResource( 68 )
+centered = false
+
+[node name="IceLeft" type="Sprite" parent="."]
+position = Vector2( 0, 544 )
+texture = ExtResource( 69 )
+centered = false
+
+[node name="IceRight" type="Sprite" parent="."]
+position = Vector2( 128, 544 )
+texture = ExtResource( 66 )
+centered = false
+
+[node name="IceTopLeft" type="Sprite" parent="."]
+position = Vector2( 0, 480 )
+texture = ExtResource( 58 )
+centered = false
+
+[node name="IceTopMiddle" type="Sprite" parent="."]
+position = Vector2( 64, 480 )
+texture = ExtResource( 59 )
+centered = false
+
+[node name="IceTopRight" type="Sprite" parent="."]
+position = Vector2( 128, 480 )
+texture = ExtResource( 52 )
+centered = false
+
+[node name="RoundIceBottom" type="Sprite" parent="."]
+position = Vector2( 0, 736 )
+texture = ExtResource( 70 )
+centered = false
+
+[node name="RoundIceLeft" type="Sprite" parent="."]
+position = Vector2( 0, 672 )
+texture = ExtResource( 71 )
+centered = false
+
+[node name="RoundIceRight" type="Sprite" parent="."]
+position = Vector2( 128, 672 )
+texture = ExtResource( 39 )
+centered = false
+
+[node name="RoundIceTop" type="Sprite" parent="."]
+position = Vector2( 64, 672 )
+texture = ExtResource( 23 )
+centered = false
+
+[node name="IceBottomInnerCorners0" type="Sprite" parent="."]
+position = Vector2( 64, 736 )
+texture = ExtResource( 42 )
+centered = false
+
+[node name="IceBottomInnerCorners1" type="Sprite" parent="."]
+position = Vector2( 128, 736 )
+texture = ExtResource( 41 )
+centered = false
+
+[node name="IceBottomInnerCorners2" type="Sprite" parent="."]
+position = Vector2( 0, 800 )
+texture = ExtResource( 46 )
+centered = false
+
+[node name="IceBottomLeftInnerCorner" type="Sprite" parent="."]
+position = Vector2( 64, 800 )
+texture = ExtResource( 36 )
+centered = false
+
+[node name="IceBottomRightInnerCorner" type="Sprite" parent="."]
+position = Vector2( 128, 800 )
+texture = ExtResource( 49 )
+centered = false
+
+[node name="IceInnerCorners0" type="Sprite" parent="."]
+position = Vector2( 0, 864 )
+texture = ExtResource( 37 )
+centered = false
+
+[node name="IceInnerCorners1" type="Sprite" parent="."]
+position = Vector2( 64, 864 )
+texture = ExtResource( 47 )
+centered = false
+
+[node name="IceInnerCorners2" type="Sprite" parent="."]
+position = Vector2( 128, 864 )
+texture = ExtResource( 38 )
+centered = false
+
+[node name="IceInnerCorners3" type="Sprite" parent="."]
+position = Vector2( 0, 928 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="IceInnerCorners4" type="Sprite" parent="."]
+position = Vector2( 64, 928 )
+texture = ExtResource( 21 )
+centered = false
+
+[node name="IceInnerCorners5" type="Sprite" parent="."]
+position = Vector2( 128, 928 )
+texture = ExtResource( 48 )
+centered = false
+
+[node name="IceInnerCorners6" type="Sprite" parent="."]
+position = Vector2( 0, 992 )
+texture = ExtResource( 35 )
+centered = false
+
+[node name="IceInnerCorners7" type="Sprite" parent="."]
+position = Vector2( 64, 992 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="IceInnerCorners8" type="Sprite" parent="."]
+position = Vector2( 128, 992 )
+texture = ExtResource( 40 )
+centered = false
+
+[node name="IceInnerCorners9" type="Sprite" parent="."]
+position = Vector2( 0, 1056 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="IceInnerCorners10" type="Sprite" parent="."]
+position = Vector2( 64, 1056 )
+texture = ExtResource( 34 )
+centered = false
+
+[node name="IceLeftInnerCorner0" type="Sprite" parent="."]
+position = Vector2( 128, 1056 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="IceLeftInnerCorner1" type="Sprite" parent="."]
+position = Vector2( 0, 1120 )
+texture = ExtResource( 31 )
+centered = false
+
+[node name="IceLeftInnerCorner2" type="Sprite" parent="."]
+position = Vector2( 64, 1120 )
+texture = ExtResource( 45 )
+centered = false
+
+[node name="IceRightInnerCorner0" type="Sprite" parent="."]
+position = Vector2( 128, 1120 )
+texture = ExtResource( 32 )
+centered = false
+
+[node name="IceRightInnerCorner1" type="Sprite" parent="."]
+position = Vector2( 0, 1184 )
+texture = ExtResource( 24 )
+centered = false
+
+[node name="IceRightInnerCorner2" type="Sprite" parent="."]
+position = Vector2( 64, 1184 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="IceTopInnerCorners0" type="Sprite" parent="."]
+position = Vector2( 128, 1184 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="IceTopInnerCorners1" type="Sprite" parent="."]
+position = Vector2( 0, 1248 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="IceTopInnerCorners2" type="Sprite" parent="."]
+position = Vector2( 64, 1248 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="IceCircle" type="Sprite" parent="."]
+position = Vector2( 128, 1248 )
+texture = ExtResource( 60 )
+centered = false
+
+[node name="IceCircle1" type="Sprite" parent="."]
+position = Vector2( 0, 1312 )
+texture = ExtResource( 57 )
+centered = false
+
+[node name="IceCircle2" type="Sprite" parent="."]
+position = Vector2( 64, 1312 )
+texture = ExtResource( 61 )
+centered = false
+
+[node name="IceSquare" type="Sprite" parent="."]
+position = Vector2( 128, 1312 )
+texture = ExtResource( 55 )
+centered = false
+
+[node name="WaterHole0" type="Sprite" parent="."]
+position = Vector2( 0, 1376 )
+texture = ExtResource( 53 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterHole0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterHole0/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 16, 16 )
+shape = SubResource( 3 )
+
+[node name="WaterHole1" type="Sprite" parent="."]
+position = Vector2( 64, 1376 )
+texture = ExtResource( 54 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterHole1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterHole1/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 16, 17 )
+shape = SubResource( 4 )
+
+[node name="WaterHole2" type="Sprite" parent="."]
+position = Vector2( 128, 1376 )
+texture = ExtResource( 56 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterHole2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterHole2/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 16, 16 )
+shape = SubResource( 5 )
+
+[node name="FenceBottomLeft" type="Sprite" parent="."]
+position = Vector2( 0, 1440 )
+texture = ExtResource( 67 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FenceBottomLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FenceBottomLeft/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 21.5, 16 )
+shape = SubResource( 6 )
+
+[node name="FenceBottomRight" type="Sprite" parent="."]
+position = Vector2( 64, 1440 )
+texture = ExtResource( 50 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FenceBottomRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FenceBottomRight/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 10.5, 16 )
+shape = SubResource( 7 )
+
+[node name="FenceHorizontal" type="Sprite" parent="."]
+position = Vector2( 128, 1440 )
+texture = ExtResource( 43 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FenceHorizontal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FenceHorizontal/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 16, 16 )
+shape = SubResource( 8 )
+
+[node name="FenceTopLeft" type="Sprite" parent="."]
+position = Vector2( 0, 1504 )
+texture = ExtResource( 51 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FenceTopLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FenceTopLeft/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 21.5, 17.5 )
+shape = SubResource( 9 )
+
+[node name="FenceTopRight" type="Sprite" parent="."]
+position = Vector2( 64, 1504 )
+texture = ExtResource( 44 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FenceTopRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FenceTopRight/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 10.5, 17.5 )
+shape = SubResource( 10 )
+
+[node name="FenceVertical" type="Sprite" parent="."]
+position = Vector2( 128, 1504 )
+texture = ExtResource( 62 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FenceVertical"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FenceVertical/StaticBody2D"]
+visible = false
+position = Vector2( 16.5, 16 )
+shape = SubResource( 11 )
+
+[node name="Log" type="Sprite" parent="."]
+position = Vector2( 64, 416 )
+texture = ExtResource( 63 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Log"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Log/StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 15, 16 )
+shape = SubResource( 12 )

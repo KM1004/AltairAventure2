@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://adfjn2.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.19835, 11.1228 )
+
+[node name="PalmTreeBig" type="Sprite"]
+position = Vector2( -47.125, 66.125 )
+scale = Vector2( 0.238189, 0.27765 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 76, 4, 127, 217 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0.524811, 44.7822 )
+scale = Vector2( 5, 5 )
+shape = SubResource( 1 )

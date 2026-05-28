@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/slime hop.mp3-a220bd7e698b7ed0336109bf20689235.mp3str"
+
+[deps]
+
+source_file="res://Media/EnemieSFX/slime/slime hop.mp3"
+dest_files=[ "res://.import/slime hop.mp3-a220bd7e698b7ed0336109bf20689235.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

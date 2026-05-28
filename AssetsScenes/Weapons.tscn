@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Assets/Other/sword.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Assets/Other/bow.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Assets/Other/bow_inactive.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Assets/Other/sword_inactive.png" type="Texture" id=4]
+
+[node name="Weapons" type="Control"]
+
+[node name="bow" type="TextureRect" parent="."]
+margin_right = 64.0
+margin_bottom = 69.0
+texture = ExtResource( 2 )
+stretch_mode = 1
+
+[node name="bowInactive" type="TextureRect" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 56.0
+margin_bottom = 56.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="sword" type="TextureRect" parent="."]
+margin_left = 72.0
+margin_right = 136.0
+margin_bottom = 64.0
+texture = ExtResource( 1 )
+stretch_mode = 1
+
+[node name="swordInactive" type="TextureRect" parent="."]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 128.0
+margin_bottom = 56.0
+texture = ExtResource( 4 )
+stretch_mode = 1

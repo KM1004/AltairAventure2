@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/wolf howl.mp3-267fc6b28a9ee5e16cfda91356a97346.mp3str"
+
+[deps]
+
+source_file="res://Media/EnemieSFX/wolf/wolf howl.mp3"
+dest_files=[ "res://.import/wolf howl.mp3-267fc6b28a9ee5e16cfda91356a97346.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

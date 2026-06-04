@@ -11,5 +11,5 @@ dest_files=[ "res://.import/player shoot arrow.mp3-a072abb7d00442182fc88b90f4705
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/player walking runnung.mp3-4d2f9385e67e59f7be4ecd9c7
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

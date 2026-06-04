@@ -11,5 +11,5 @@ dest_files=[ "res://.import/player slash.mp3-f9e10d98b7310906a15dcc0692878d15.mp
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

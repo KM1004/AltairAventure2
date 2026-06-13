@@ -1,5 +1,5 @@
-extends Node2D
-
+extends Area2D
+onready var global_vars = get_node("/root/Globals")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -8,7 +8,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	MainHud.call_deferred("hide_hud")
 	pass # Replace with function body.
 
 
@@ -17,6 +16,11 @@ func _ready():
 #	pass
 
 
-func _on_Back_pressed():
-	get_tree().change_scene("res://MainMenu.tscn")
+func _on_Coin_body_entered(body):
+	if body.name == "Player":
+		global_vars.Health -= 10
+		Globals.Coins += 10
+		MainHud.update_health(global_vars.Health)
+		MainHud.update_coins(global_vars.Coins)
+		queue_free()#delete the node
 	pass # Replace with function body.

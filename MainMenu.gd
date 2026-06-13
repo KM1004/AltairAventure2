@@ -8,6 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MainHud.hide_hud()
 	var screen_size = OS.get_screen_size()
 	var window_size = OS.get_window_size()
 	

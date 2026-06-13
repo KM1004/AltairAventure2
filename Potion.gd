@@ -1,5 +1,7 @@
-extends Node2D
+extends Area2D
 
+onready var global_vars = get_node("/root/Globals")
+var picked = false
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -8,7 +10,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	MainHud.call_deferred("hide_hud")
 	pass # Replace with function body.
 
 
@@ -17,6 +18,13 @@ func _ready():
 #	pass
 
 
-func _on_Back_pressed():
-	get_tree().change_scene("res://MainMenu.tscn")
-	pass # Replace with function body.
+func _on_Potion_body_entered(body):
+	if picked:
+		return
+		
+	if body.name == "Player":
+		picked = true
+		
+		global_vars.Potions += 1
+		
+		queue_free()

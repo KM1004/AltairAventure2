@@ -35,6 +35,7 @@
 
 extends KinematicBody2D
 
+onready var global_vars = get_node("/root/Globals")
 export var speed = 200
 var velocity = Vector2.ZERO
 
@@ -68,6 +69,9 @@ func _ready():
 	$Sprite.connect("animation_finished", self, "_on_Sprite_animation_finished")
 
 func _physics_process(delta):
+#	if Input.is_action_just_pressed("use_potion"):
+#		global_vars.use_potion()
+	
 	if is_dead:
 		return
 
@@ -135,6 +139,12 @@ func _physics_process(delta):
 			current_weapon = "bow"
 		else:
 			current_weapon = "slash"
+
+func _input(event):
+	if event.is_action_pressed("use_potion"):
+		print("POTION KEY PRESSED")
+#		global_vars.use_potion()
+		get_node("/root/Globals").use_potion()
 
 
 # ========================

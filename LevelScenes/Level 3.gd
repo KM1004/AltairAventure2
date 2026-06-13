@@ -24,3 +24,7 @@ func _on_WaterTimer_timeout():
 	if player_in_water:
 		player.lives -= 1
 		#print("Took water damage! Lives:", player.lives)
+		
+
+
+

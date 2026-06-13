@@ -39,7 +39,7 @@ onready var global_vars = get_node("/root/Globals")
 export var speed = 200
 var velocity = Vector2.ZERO
 
-var facing = "down"
+var facing = "Down"
 
 var is_attacking = false
 var is_shooting = false

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/orc3_attack_full.png-2cf9892ac1ca6730ff2340a5b87066ed.stex"
+path="res://.import/orc3_attack_full.png-7140967ef25050476e244e1b6e297634.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Enemies/Orc3/orc3_attack_full.png"
-dest_files=[ "res://.import/orc3_attack_full.png-2cf9892ac1ca6730ff2340a5b87066ed.stex" ]
+source_file="res://Sprites/Enemies/Orc3/actions/orc3_attack_full.png"
+dest_files=[ "res://.import/orc3_attack_full.png-7140967ef25050476e244e1b6e297634.stex" ]
 
 [params]
 

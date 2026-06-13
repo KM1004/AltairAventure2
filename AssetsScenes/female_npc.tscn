@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Sprites/NPCs/NPC_Characters_v1.0/Female1.png" type="Texture" id=1]
+[ext_resource path="res://AssetsScenes/female_npc.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -141,17 +142,39 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=26]
-radius = 76.2758
+radius = 174.011
 
 [node name="female_nps" type="Area2D"]
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
 animation = "left_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 26 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -81.0
+margin_top = -132.0
+margin_right = 84.0
+margin_bottom = -73.0
+
+[node name="Msg" type="Label" parent="Panel"]
+margin_left = 21.0
+margin_top = 16.0
+margin_right = 141.0
+margin_bottom = 47.0
+text = "default message
+"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[connection signal="body_entered" from="." to="." method="_on_female_nps_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_female_nps_body_exited"]

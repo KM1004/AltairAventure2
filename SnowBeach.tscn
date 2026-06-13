@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://BeachTileSet.tres" type="TileSet" id=2]
@@ -6,12 +6,19 @@
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Potion.tscn" type="PackedScene" id=6]
+[ext_resource path="res://EnemiesScenes/ogre.tscn" type="PackedScene" id=7]
+[ext_resource path="res://EnemiesScenes/Orc1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1, 273 )
+
+[sub_resource type="NavigationPolygon" id=3]
+vertices = PoolVector2Array( 430, 472, 16, 469, 12, 46, 1020, 42, 1024, 470 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
+outlines = [ PoolVector2Array( 430, 472, 16, 469, 12, 46, 1020, 42, 1024, 470 ) ]
 
 [node name="SnowBeach" type="Node2D"]
 
@@ -385,3 +392,14 @@ position = Vector2( 957, 481 )
 
 [node name="Potion" parent="." instance=ExtResource( 6 )]
 position = Vector2( 823, 520 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 3 )
+
+[node name="Orc" parent="." instance=ExtResource( 8 )]
+position = Vector2( 451, 286 )
+
+[node name="ogre" parent="." instance=ExtResource( 7 )]
+position = Vector2( 763, 151 )

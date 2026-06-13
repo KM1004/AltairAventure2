@@ -773,7 +773,7 @@ __meta__ = {
 scale = Vector2( 3, 3 )
 frames = SubResource( 55 )
 animation = "r_attack"
-frame = 6
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -796,7 +796,6 @@ shape = SubResource( 186 )
 [node name="TakeDamage" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TakeDamage"]
-visible = false
 shape = SubResource( 187 )
 
 [connection signal="body_entered" from="DetectRange" to="." method="_on_DetectRange_body_entered"]

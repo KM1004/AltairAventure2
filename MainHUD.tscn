@@ -1,0 +1,197 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_00.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_04.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_03.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_02.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_01.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Assets/Other/free_icons2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_10.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_09.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_08.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_05.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_07.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_06.png" type="Texture" id=12]
+[ext_resource path="res://Fonts/Roboto.tres" type="DynamicFont" id=13]
+[ext_resource path="res://MainHUD.gd" type="Script" id=14]
+[ext_resource path="res://icons8-menu-50.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Assets/HeartsandPortions/free_icons1.png" type="Texture" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "10%Health",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "20%Health",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "30%Health",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "40%Health",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "50%Health",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "60%Heath",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "70%Health",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "80%Heath",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "90%Health",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "FullHealth",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "NoHealth",
+"speed": 5.0
+} ]
+
+[node name="MainHUD" type="Node"]
+script = ExtResource( 14 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="HUD"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_top = 1.0
+margin_right = 143.0
+margin_bottom = 128.0
+
+[node name="Health" type="Label" parent="HUD"]
+margin_left = 3.0
+margin_top = 8.0
+margin_right = 50.0
+margin_bottom = 27.0
+rect_rotation = -0.143184
+custom_fonts/font = ExtResource( 13 )
+text = "Health:"
+
+[node name="HealthBar" type="AnimatedSprite" parent="HUD"]
+position = Vector2( 97, 18 )
+frames = SubResource( 1 )
+animation = "FullHealth"
+
+[node name="CoinSprite" type="Sprite" parent="HUD"]
+position = Vector2( 17, 48.9999 )
+scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 16, 16 )
+
+[node name="Coin" type="Label" parent="HUD"]
+margin_left = 33.0
+margin_top = 38.0
+margin_right = 73.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 13 )
+text = ":"
+
+[node name="SubMenuButton" type="Button" parent="HUD"]
+modulate = Color( 1, 1, 1, 0.52549 )
+margin_left = 960.0
+margin_top = 1.0
+margin_right = 1022.0
+margin_bottom = 57.0
+icon = ExtResource( 15 )
+
+[node name="PotiionSprite" type="Sprite" parent="HUD"]
+position = Vector2( 16, 80 )
+scale = Vector2( 1.9375, 1.9375 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="Potion" type="Label" parent="HUD"]
+margin_left = 32.0
+margin_top = 73.0
+margin_right = 72.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 13 )
+text = ":"
+
+[node name="Artifact1" type="Sprite" parent="HUD"]
+position = Vector2( 72, 112 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 16, 0, 16, 16 )
+
+[node name="Artifact2" type="Sprite" parent="HUD"]
+position = Vector2( 92, 112 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+
+[node name="Artifact3" type="Sprite" parent="HUD"]
+position = Vector2( 112, 112 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+
+[node name="Label" type="Label" parent="HUD"]
+margin_top = 102.0
+margin_right = 59.0
+margin_bottom = 121.0
+custom_fonts/font = ExtResource( 13 )
+text = "Artifacts:"
+
+[node name="SubMenu" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="SubMenu"]
+margin_left = 384.0
+margin_top = 128.0
+margin_right = 638.0
+margin_bottom = 384.0
+
+[node name="Quit" type="Button" parent="SubMenu/Panel"]
+margin_left = 108.0
+margin_top = 137.0
+margin_right = 148.0
+margin_bottom = 157.0
+text = "Quit"
+
+[node name="Continue" type="Button" parent="SubMenu/Panel"]
+margin_left = 94.0
+margin_top = 160.0
+margin_right = 163.0
+margin_bottom = 180.0
+text = "Continue"
+
+[node name="Label" type="Label" parent="SubMenu/Panel"]
+margin_left = 88.0
+margin_top = 91.0
+margin_right = 168.0
+margin_bottom = 105.0
+text = "Game Pause"
+
+[connection signal="pressed" from="HUD/SubMenuButton" to="." method="_on_SubMenu_pressed"]
+[connection signal="pressed" from="SubMenu/Panel/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="SubMenu/Panel/Continue" to="." method="_on_Continue_pressed"]

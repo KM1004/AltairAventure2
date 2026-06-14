@@ -768,12 +768,13 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
+attack_range = 30
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3, 3 )
 frames = SubResource( 55 )
 animation = "r_attack"
-frame = 4
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -790,7 +791,6 @@ shape = SubResource( 185 )
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-visible = false
 shape = SubResource( 186 )
 
 [node name="TakeDamage" type="Area2D" parent="."]
@@ -798,6 +798,7 @@ shape = SubResource( 186 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TakeDamage"]
 shape = SubResource( 187 )
 
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="DetectRange" to="." method="_on_DetectRange_body_entered"]
 [connection signal="body_exited" from="DetectRange" to="." method="_on_DetectRange_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]

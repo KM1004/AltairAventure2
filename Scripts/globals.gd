@@ -47,10 +47,12 @@ extends Node
 signal health_changed(new_health)
 signal coins_changed(new_coins)
 signal potions_changed(new_amount)
+signal artifact_collected(id)
 
 var _health = 100
 var _coins = 0
 var _potions = 5
+var artifacts = [false, false, false]  
 
 var Health setget set_Health, get_Health
 var Coins setget set_Coins, get_Coins
@@ -105,27 +107,6 @@ func get_Potions():
 # USE POTION
 # ========================
 
-#func use_potion():
-#	if _potions > 0 and can_use_potion:
-#		Potions -= 1
-#		Health += 10
-#
-#		can_use_potion = false
-#		start_cooldown()
-
-#func use_potion():
-#	print("POTION FUNCTION RUNNING")
-#	print("Before:", _potions, _health)
-#
-#	if _potions > 0 and can_use_potion:
-#		Potions -= 1
-#		Health += 10
-#
-#		print("After:", _potions, _health)
-#
-#		can_use_potion = false
-#		start_cooldown()
-
 func use_potion():
 	print("POTION FUNCTION RUNNING")
 
@@ -165,3 +146,9 @@ func use_potion():
 func start_cooldown():
 	yield(get_tree().create_timer(potion_cooldown), "timeout")
 	can_use_potion = true
+	
+func collect_artifact(id):
+	if id >= 0 and id < artifacts.size():
+		if artifacts[id] == false:
+			artifacts[id] = true
+			emit_signal("artifact_collected", id)

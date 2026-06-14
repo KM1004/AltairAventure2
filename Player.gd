@@ -1,38 +1,3 @@
-#extends KinematicBody2D
-#
-#export var speed = 200
-#var velocity = Vector2.ZERO
-#
-#func _ready():
-#	# Camera limits (optional)
-#	var map = get_parent().get_node("TileMap")
-#	var map_limits = map.get_used_rect()
-#	var map_cellsize = map.cell_size
-#	var cam = $Camera2D
-#	cam.limit_left = map_limits.position.x * map_cellsize.x
-#	cam.limit_top = map_limits.position.y * map_cellsize.y
-#	cam.limit_right = map_limits.end.x * map_cellsize.x
-#	cam.limit_bottom = map_limits.end.y * map_cellsize.y
-#
-#func _physics_process(delta):
-#	var input_vector = Vector2.ZERO
-#
-#	# Get input strength for 4 directions
-#	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-#	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-#
-#	# Normalize to prevent fast diagonal movement
-#	input_vector = input_vector.normalized()
-#
-#	if input_vector != Vector2.ZERO:
-#		velocity = input_vector * speed
-#	else:
-#		velocity = Vector2.ZERO
-#
-#	# Apply movement and handle collisions
-#	velocity = move_and_slide(velocity)
-
-
 extends KinematicBody2D
 
 onready var global_vars = get_node("/root/Globals")
@@ -64,6 +29,8 @@ func _ready():
 #	cam.limit_top = map_limits.position.y * map_cellsize.y
 #	cam.limit_right = map_limits.end.x * map_cellsize.x
 #	cam.limit_bottom = map_limits.end.y * map_cellsize.y
+
+	$SlashHitbox.monitoring = false   # 🔥 THIS FIXES IDLE DAMAGE
 	
 	# 🔥 THIS LINE FIXES YOUR ISSUE
 	$Sprite.connect("animation_finished", self, "_on_Sprite_animation_finished")
@@ -160,6 +127,12 @@ func start_slash():
 
 	update_hitbox_position()   # 🔥 ADD THIS
 	$SlashHitbox.monitoring = true
+	
+	# 🔥 ADD THIS BLOCK
+	for body in $SlashHitbox.get_overlapping_bodies():
+		if body.has_method("take_damage"):
+			body.take_damage(3)
+	
 	$SFX_Slash.play()  # 🔊 ADD THIS
 	$Sprite.play("Slash_" + facing)
 	#$SFX_Slash.stop()
@@ -272,3 +245,12 @@ func _on_Sprite_animation_finished():
 
 	elif is_dead:
 		pass
+
+
+func _on_SlashHitbox_body_entered(body):
+	if not is_attacking:
+		return
+
+	if body.has_method("take_damage"):
+		body.take_damage(3)
+	pass # Replace with function body.

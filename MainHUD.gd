@@ -111,12 +111,16 @@ func _ready():
 	global_vars.connect("health_changed", self, "update_health")
 	global_vars.connect("coins_changed", self, "_on_coins_changed")
 	global_vars.connect("potions_changed", self, "_on_potions_changed")
+	global_vars.connect("artifact_collected", self, "_on_artifact_collected")
 
 	# FORCE INITIAL UPDATE
 	update_health(global_vars.Health)
 	update_coins(global_vars.Coins)
 	update_potions(global_vars.Potions)
 
+	$HUD/Artifact1.hide()
+	$HUD/Artifact2.hide()
+	$HUD/Artifact3.hide()
 
 func _process(delta):
 	var scene = get_tree().current_scene
@@ -200,6 +204,16 @@ func _on_potions_changed(value):
 func update_potions(amount):
 	if has_node("HUD/Potion"):
 		$HUD/Potion.text = "Potions: " + str(amount)
+
+func _on_artifact_collected(id):
+	match id:
+		0:
+			$HUD/Artifact1.show()
+		1:
+			$HUD/Artifact2.show()
+		2:
+			$HUD/Artifact3.show()
+
 
 # ========================
 # HUD VISIBILITY

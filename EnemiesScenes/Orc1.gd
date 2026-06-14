@@ -24,6 +24,7 @@ export var walk_speed = 75
 export var patrol_speed = 100
 export var gravity = 1000
 export var attack_range = 50
+export var points = 10
 
 var velocity = Vector2.ZERO
 var direction = Vector2.RIGHT

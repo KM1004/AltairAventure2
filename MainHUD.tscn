@@ -117,9 +117,9 @@ text = ":"
 
 [node name="SubMenuButton" type="Button" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.52549 )
-margin_left = 960.0
+margin_left = 1016.0
 margin_top = 1.0
-margin_right = 1022.0
+margin_right = 1078.0
 margin_bottom = 57.0
 icon = ExtResource( 15 )
 

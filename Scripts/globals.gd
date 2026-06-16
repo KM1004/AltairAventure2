@@ -56,16 +56,22 @@ var artifacts = [false, false, false]
 
 var Health setget set_Health, get_Health
 var Coins setget set_Coins, get_Coins
+onready var next_scene setget set_next_scene, get_next_scene
 var Potions setget set_Potions, get_Potions
 
 var potion_cooldown = 5.0
 var can_use_potion = true
+var next_spawn_position = Vector2.ZERO
 
 func _ready():
 	Health = 100
 	Coins = 0
 	Potions = 5
 
+func reset_globals():
+	Health = 100
+	Coins = 0
+	Potions = 5
 
 # ========================
 # HEALTH
@@ -89,7 +95,17 @@ func set_Coins(value):
 
 func get_Coins():
 	return _coins
+
+# ========================
+# NEXT_SCENE
+# ========================
+
+func set_next_scene(value):
+	next_scene = value
+	pass
 	
+func get_next_scene():
+	return next_scene
 
 # ========================
 # POTIONS

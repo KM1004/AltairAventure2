@@ -30,14 +30,20 @@ func _ready():
 #	cam.limit_right = map_limits.end.x * map_cellsize.x
 #	cam.limit_bottom = map_limits.end.y * map_cellsize.y
 
+	var g = get_node("/root/Globals")
+	
+	if g.next_spawn_position != Vector2.ZERO:
+		global_position = g.next_spawn_position
+		g.next_spawn_position = Vector2.ZERO
+
 	$SlashHitbox.monitoring = false   # 🔥 THIS FIXES IDLE DAMAGE
 	
 	# 🔥 THIS LINE FIXES YOUR ISSUE
 	$Sprite.connect("animation_finished", self, "_on_Sprite_animation_finished")
 
 func _physics_process(delta):
-#	if Input.is_action_just_pressed("use_potion"):
-#		global_vars.use_potion()
+	if global_vars.Health <= 0:
+		game_over()
 	
 	if is_dead:
 		return
@@ -164,16 +170,19 @@ func spawn_arrow():
 	match facing:
 		"Right":
 			offset = Vector2(20, 0)
-			arrow.direction = Vector2.RIGHT
+			arrow.set_direction(Vector2.RIGHT)
+
 		"Left":
 			offset = Vector2(-20, 0)
-			arrow.direction = Vector2.LEFT
+			arrow.set_direction(Vector2.LEFT)
+
 		"Down":
 			offset = Vector2(0, 20)
-			arrow.direction = Vector2.DOWN
+			arrow.set_direction(Vector2.DOWN)
+
 		"Up":
 			offset = Vector2(0, -20)
-			arrow.direction = Vector2.UP
+			arrow.set_direction(Vector2.UP)
 
 	arrow.global_position = $Muzzle.global_position + offset
 
@@ -254,3 +263,10 @@ func _on_SlashHitbox_body_entered(body):
 	if body.has_method("take_damage"):
 		body.take_damage(3)
 	pass # Replace with function body.
+	
+func game_over():
+	# Optional: reset globals if needed
+#	global_vars.reset_globals()
+
+	# Switch to Game Over scene properly
+	get_tree().change_scene("res://GameOver1.tscn")

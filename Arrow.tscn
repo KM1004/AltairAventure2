@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Assets/Arrows/Arrow.png" type="Texture" id=1]
 [ext_resource path="res://Arrow.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+extents = Vector2( 10, 1.5 )
 
 [node name="Arrow" type="Area2D" groups=["player_weapon"]]
 collision_layer = 2
@@ -14,11 +14,14 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( -0.999998, 1 )
+scale = Vector2( 1.71875, 1.6875 )
 texture = ExtResource( 1 )
+region_enabled = true
 region_rect = Rect2( 0, 64, 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 10, 0 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Arrow_body_entered"]

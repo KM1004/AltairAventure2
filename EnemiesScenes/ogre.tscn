@@ -754,16 +754,17 @@ animations = [ {
 height = 10.0
 
 [sub_resource type="CircleShape2D" id=185]
-radius = 222.036
+radius = 111.005
 
 [sub_resource type="CircleShape2D" id=186]
-radius = 106.738
+radius = 48.3735
 
 [sub_resource type="CapsuleShape2D" id=187]
-radius = 31.0
-height = 82.0
+radius = 16.0
+height = 6.0
 
 [node name="ogre" type="KinematicBody2D"]
+position = Vector2( 80, -46 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -771,11 +772,11 @@ __meta__ = {
 attack_range = 30
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 3, 3 )
+position = Vector2( -7.62939e-06, 0 )
+scale = Vector2( 0.8125, 0.828125 )
 frames = SubResource( 55 )
 animation = "r_attack"
-frame = 3
-playing = true
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -785,7 +786,6 @@ shape = SubResource( 56 )
 [node name="DetectRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRange"]
-visible = false
 shape = SubResource( 185 )
 
 [node name="AttackArea" type="Area2D" parent="."]

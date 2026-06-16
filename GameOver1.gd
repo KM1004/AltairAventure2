@@ -25,6 +25,9 @@ func _on_Quit_pressed():
 
 
 func _on_Restart_pressed():
+	print("RESTART CLICKED")
 	global_vars.reset_globals()
+	yield(get_tree(), "idle_frame")
 	get_tree().change_scene(global_vars.next_scene)
+	print("Health after reset:", global_vars.Health)
 	pass # Replace with function body.

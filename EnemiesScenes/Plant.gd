@@ -1,10 +1,11 @@
 extends KinematicBody2D
-
+onready var globals = get_node("/root/Globals")
 #const UP = Vector2(0, -1)
 const SPEED = 200
 #const GRAVITY = 20
 #const JUMP_HEIGHT = -600
 
+var energy = 10
 var motion = Vector2()
 var altair = "Player"
 enum{
@@ -140,3 +141,29 @@ func update_animation():
 					sprite.play("b_die")
 		
 
+func take_damage(amount):
+	if state == DEAD:
+		return
+	energy -= amount
+	if energy <= 0:
+		globals.Score += 10
+		die()
+	else:
+		state = HURT
+
+func _on_TakeDamage_body_entered(body):
+	print("hurt")
+
+
+func _on_TakeDamage_body_exited(body):
+	pass # Replace with function body.
+
+func die():
+	energy = 0
+	state = DEAD
+	
+	
+	player_detected = false
+	player_in_attack_range = false
+
+	update_animation()

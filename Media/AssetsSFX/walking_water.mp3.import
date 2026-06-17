@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/walking_water.mp3-c58d27bf6ffdf4ab30a72171b16bfc61.mp3str"
+
+[deps]
+
+source_file="res://Media/AssetsSFX/walking_water.mp3"
+dest_files=[ "res://.import/walking_water.mp3-c58d27bf6ffdf4ab30a72171b16bfc61.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

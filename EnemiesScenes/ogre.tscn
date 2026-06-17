@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=2]
+[gd_scene load_steps=142 format=2]
 
 [ext_resource path="res://Sprites/Enemies/Orc3/actions/orc3_attack_full.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Enemies/Orc3/orc3_hurt_full.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Sprites/Enemies/Orc3/orc3_death_full.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Enemies/Orc3/orc3_idle_full.png" type="Texture" id=5]
 [ext_resource path="res://EnemiesScenes/ogre.gd" type="Script" id=6]
+[ext_resource path="res://Media/EnemieSFX/orc_ogre/orc grunt 2.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Media/EnemieSFX/orc_ogre/orc attack.mp3" type="AudioStream" id=8]
 
 [sub_resource type="AtlasTexture" id=57]
 flags = 4
@@ -798,6 +800,12 @@ shape = SubResource( 186 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TakeDamage"]
 visible = false
 shape = SubResource( 187 )
+
+[node name="die" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="DetectRange" to="." method="_on_DetectRange_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=2]
+[gd_scene load_steps=115 format=2]
 
 [ext_resource path="res://Sprites/Enemies/Plants/PNG/Plant1/Attack/Plant1_Attack_full.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Enemies/Plants/PNG/Plant1/Death/Plant1_Death_full.png" type="Texture" id=2]
@@ -620,6 +620,8 @@ radius = 65.9697
 radius = 38.0
 height = 0.0
 
+[sub_resource type="CapsuleShape2D" id=109]
+
 [node name="Plant" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 5 )
 __meta__ = {
@@ -629,6 +631,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 29 )
 animation = "f_idle"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -644,9 +647,17 @@ shape = SubResource( 107 )
 [node name="AttackRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+visible = false
 shape = SubResource( 108 )
+
+[node name="TakeDamage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TakeDamage"]
+shape = SubResource( 109 )
 
 [connection signal="body_entered" from="DetectArea" to="." method="_on_DetectArea_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_DetectArea_body_exited"]
 [connection signal="body_entered" from="AttackRange" to="." method="_on_AttackRange_body_entered"]
 [connection signal="body_exited" from="AttackRange" to="." method="_on_AttackRange_body_exited"]
+[connection signal="body_entered" from="TakeDamage" to="." method="_on_TakeDamage_body_entered"]
+[connection signal="body_exited" from="TakeDamage" to="." method="_on_TakeDamage_body_exited"]

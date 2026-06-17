@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/foundItem.mp3-dd88afc82f84f6348d8fc2152591c88d.mp3str"
+
+[deps]
+
+source_file="res://Media/AssetsSFX/foundItem.mp3"
+dest_files=[ "res://.import/foundItem.mp3-dd88afc82f84f6348d8fc2152591c88d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

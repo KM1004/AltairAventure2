@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://TileMapSets/volcanoterrain_tiles1.tres" type="TileSet" id=1]
 [ext_resource path="res://TileMapSets/trees.tres" type="TileSet" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://AssetsScenes/lavaAreas.tscn" type="PackedScene" id=6]
 [ext_resource path="res://LevelScenes/Level 4.gd" type="Script" id=7]
 [ext_resource path="res://EnemiesScenes/Orc1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Media/BackgroundMusic/Level4.mp3" type="AudioStream" id=9]
+[ext_resource path="res://EnemiesScenes/ogre.tscn" type="PackedScene" id=10]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 203, 634, 47, 699, 63, 585, 101, 477, 247, 457, 1983, 1108, 2163, 1028, 2203, 1236, 2107, 1432, 1663, 1016, 1819, 996, 1831, 1080, 1034, 2204, 241, 1978, -84, 1993, -114, 1759, 112, 1585, 618, 2008, 339, 2136, 1050, 778, 4431, 2016, 4195, 2020, 4179, 1940, 4239, 1880, 4399, 1876, 4683, 1872, 4771, 1532, 4807, 1680, 4447, 1736, 4659, 1412, 4235, 1336, 4288, 1600, 4175, 1548, 3983, 1432, 4039, 1638, 3655, 1548, 2060, 2620, 1804, 2861, 1683, 2786, 1313, 2416, 2471, 1432, 4077, 1918, 3888, 2152, 3473, 2091, 3279, 1440, 3533, 2295, 3352, 2439, 2823, 2635, 2430, 2763, 2196, 2816, 2719, 1276, 913, 2212, 716, 2220, 1339, 800, 2733, 2793, 1456, 2846, 1298, 2665, 3193, 2680, 1124, 2401, 1539, 892, 1431, 784, 22, 1359, 165, 1004, 764, 505, 510, 372, 307, 373 )
@@ -112,7 +114,7 @@ visible = false
 polygon = PoolVector2Array( 3024, 1761, 3056, 1760, 3056, 1776, 3072, 1777, 3072, 1792, 3056, 1793, 3056, 1824, 3024, 1823, 3025, 1792, 3008, 1793, 3008, 1777, 3023, 1778 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 192, 380 )
+position = Vector2( 543, 1245 )
 
 [node name="Node" type="Node" parent="."]
 
@@ -127,3 +129,33 @@ position = Vector2( 3560, 1823 )
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 visible = false
 navpoly = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="ogre" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 1711, 1273 )
+
+[node name="ogre5" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 2104, 2564 )
+
+[node name="ogre3" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 1578, 2168 )
+
+[node name="ogre4" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 2605, 1907 )
+
+[node name="Orc" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 533, 1346 )
+
+[node name="Orc2" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 2784, 2047 )
+
+[node name="ogre2" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 1077, 1792 )

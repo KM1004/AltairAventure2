@@ -75,6 +75,7 @@ var Score setget set_score, get_score
 var potion_cooldown = 5.0
 var can_use_potion = true
 var next_spawn_position = Vector2.ZERO
+var loading_text = ""
 
 func _ready():
 	Health = 100

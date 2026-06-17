@@ -27,7 +27,21 @@ func _on_PortalVertical_body_entered(body):
 		used = true
 		
 		var g = get_node("/root/Globals")
+		
+		g.next_scene = target_scene
 		g.next_spawn_position = spawn_position
 		
-		get_tree().change_scene(target_scene)
+		if target_scene == "res://SnowBeach.tscn" or target_scene == "res://SnowyForest.tscn" or target_scene == "res://FrozenLake.tscn":
+			g.loading_text = "A frozen land where icy winds and hidden dangers await beneath the ice."
+			
+		elif target_scene == "res://Beach.tscn"or target_scene == "res://Forest.tscn" or target_scene == "res://Forest2.tscn":
+			g.loading_text = "A peaceful island filled with lush trees and wandering creatures."
+		
+		elif target_scene == "res://LevelScenes/Level 3.tscn":
+			g.loading_text = "A magical forest glowing with mystery and ancient power."
+		
+		elif target_scene == "res://LevelScenes/Level 4.tscn":
+			g.loading_text = "A land of fire and ashes, where survival is never certain."
+		
+		get_tree().change_scene("res://Loading.tscn")
 	pass # Replace with function body.

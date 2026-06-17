@@ -47,23 +47,34 @@ extends Node
 signal health_changed(new_health)
 signal coins_changed(new_coins)
 signal potions_changed(new_amount)
+signal artifact_collected(id)
 signal wood_changed(new_wood)
 signal score_changed(new_score)
 
 var _health = 100
 var _coins = 0
 var _potions = 5
+var artifacts = [false, false, false]  
+var potion_heal_amount = 10
+var slash_damage = 3
+var arrow_damage = 3
+var potion_cost = 10
+var slash_cost = 20
+var arrow_cost = 20
+var potion_upgrade_cost = 100
 var _wood = 0
 var _score = 0
 
 var Health setget set_Health, get_Health
 var Coins setget set_Coins, get_Coins
+var next_scene = ""
 var Potions setget set_Potions, get_Potions
 var Wood setget set_wood, get_wood
 var Score setget set_score, get_score
 
 var potion_cooldown = 5.0
 var can_use_potion = true
+var next_spawn_position = Vector2.ZERO
 
 func _ready():
 	Health = 100
@@ -71,6 +82,18 @@ func _ready():
 	Potions = 5
 	Wood = 0
 	Score = 0
+
+func reset_globals():
+	_health = 100
+	_coins = 0
+	_potions = 5
+	_wood = 0
+	_score = 0
+	next_spawn_position = Vector2.ZERO
+	
+	emit_signal("health_changed", _health)
+	emit_signal("coins_changed", _coins)
+	emit_signal("potions_changed", _potions)
 
 
 # ========================
@@ -174,6 +197,12 @@ func start_cooldown():
 	yield(get_tree().create_timer(potion_cooldown), "timeout")
 	can_use_potion = true
 	
+
+func collect_artifact(id):
+	if id >= 0 and id < artifacts.size():
+		if artifacts[id] == false:
+			artifacts[id] = true
+			emit_signal("artifact_collected", id)
 
 # ========================
 # SCORE

@@ -164,8 +164,8 @@ text = ":"
 
 [node name="SubMenuButton" type="Button" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.52549 )
-margin_left = 1024.0
-margin_right = 1086.0
+margin_left = 959.0
+margin_right = 1021.0
 margin_bottom = 56.0
 icon = ExtResource( 15 )
 
@@ -262,13 +262,13 @@ text = ":"
 
 [node name="Panel" type="Panel" parent="Score"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 968.0
-margin_top = 72.0
-margin_right = 1080.0
-margin_bottom = 144.0
+margin_left = 936.0
+margin_top = 64.0
+margin_right = 1048.0
+margin_bottom = 136.0
 
 [node name="ScoreBar" type="AnimatedSprite" parent="Score"]
-position = Vector2( 1024, 104 )
+position = Vector2( 992, 96 )
 frames = SubResource( 4 )
 animation = "range1"
 

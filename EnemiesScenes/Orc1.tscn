@@ -955,7 +955,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "r_walk"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -980,6 +979,7 @@ shape = SubResource( 140 )
 visible = false
 shape = SubResource( 141 )
 
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="DetectRange" to="." method="_on_DetectRange_body_entered"]
 [connection signal="body_exited" from="DetectRange" to="." method="_on_DetectRange_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]

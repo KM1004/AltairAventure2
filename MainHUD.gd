@@ -108,6 +108,7 @@ func _ready():
 	global_vars.connect("health_changed", self, "update_health")
 	global_vars.connect("coins_changed", self, "_on_coins_changed")
 	global_vars.connect("potions_changed", self, "_on_potions_changed")
+	global_vars.connect("artifact_collected", self, "_on_artifact_collected")
 	global_vars.connect("wood_changed", self,"_on_wood_changed")
 	global_vars.connect("score_changed", self, "_on_score_changed")
 	
@@ -119,11 +120,9 @@ func _ready():
 	update_wood(global_vars.Wood)
 	update_score(global_vars.Score)
 	
-	
-	
-	
-	
-
+	$HUD/Artifact1.hide()
+	$HUD/Artifact2.hide()
+	$HUD/Artifact3.hide()
 
 func _process(delta):
 	var scene = get_tree().current_scene
@@ -143,7 +142,7 @@ func _handle_scene_change(scene_name):
 	var hud = get_node_or_null("HUD")
 	var submenu = get_node_or_null("SubMenu")
 	
-	if scene_name == "MainMenu" or scene_name == "Credits" or scene_name == "Help":
+	if scene_name == "MainMenu" or scene_name == "Credits" or scene_name == "Help" or scene_name == "GameOver1" or scene_name == "Shop":
 		if hud:
 			hud.hide()
 		if submenu:
@@ -211,6 +210,17 @@ func update_potions(amount):
 	if has_node("HUD/Potion"):
 		$HUD/Potion.text = "Potions: " + str(amount)
 
+# ========================
+# ARTIFACT SYSTEM
+# ========================
+func _on_artifact_collected(id):
+	match id:
+		0:
+			$HUD/Artifact1.show()
+		1:
+			$HUD/Artifact2.show()
+		2:
+			$HUD/Artifact3.show()
 
 # ========================
 # HUD VISIBILITY

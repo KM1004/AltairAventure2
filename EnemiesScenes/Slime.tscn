@@ -171,7 +171,6 @@ __meta__ = {
 scale = Vector2( 2, 1 )
 frames = SubResource( 25 )
 animation = "d_walk"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

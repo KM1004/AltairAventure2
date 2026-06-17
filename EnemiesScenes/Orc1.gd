@@ -1,6 +1,8 @@
 extends KinematicBody2D
-
-
+onready var global_vars = get_node("/root/Globals")
+var can_attack = true
+export var attack_cooldown = 1.0   # seconds
+export var attack_damage = 5
 # ------------------------
 # STATE SYSTEM
 # ------------------------
@@ -19,11 +21,12 @@ var state = IDLE
 # ------------------------
 # MOVEMENT
 # ------------------------
-export var run_speed = 200
+export var run_speed = 100
 export var walk_speed = 75
 export var patrol_speed = 100
 export var gravity = 1000
 export var attack_range = 50
+export var points = 10
 
 var velocity = Vector2.ZERO
 var direction = Vector2.RIGHT
@@ -42,7 +45,7 @@ var player_in_attack_range = false
 # STATUS
 # ------------------------
 var is_dead = false
-var energy = 15
+export var energy = 15
 
 
 # ------------------------
@@ -75,6 +78,34 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	update_animation()
 
+
+	if player_in_range and player:
+		face_player()
+
+	if player_in_attack_range:
+		velocity = Vector2.ZERO   # stop moving
+		
+		if can_attack:
+			state = ATTACK
+			attack()
+	else:
+		state = RUN
+		chase_player()
+
+
+func attack():
+	can_attack = false
+	
+	# Deal damage ONCE
+	if player:
+#		var globals = get_node("/root/Globals")
+		global_vars.Health -= attack_damage
+		MainHud.update_health(global_vars.Health)
+
+	# Wait before next attack (prevents spam)
+	yield(get_tree().create_timer(attack_cooldown), "timeout")
+	
+	can_attack = true
 
 # =========================================================
 # PATROL
@@ -191,6 +222,7 @@ func _on_AttackArea_body_exited(body):
 # DAMAGE
 # =========================================================
 func _on_TakeDamage_body_entered(body):
+	print(">>> DETECTED:", body, " NAME:", body.name)
 	if body.is_in_group("player_weapon"):
 		energy -= 3
 
@@ -206,3 +238,20 @@ func _on_TakeDamage_body_entered(body):
 func die():
 	state = DEAD
 	velocity = Vector2.ZERO
+	
+	
+	
+func take_damage(amount):
+	energy -= amount
+	print("ENEMY HIT! Energy:", energy)
+
+	if energy <= 0:
+		die()
+	else:
+		state = HURT
+
+
+func _on_AnimatedSprite_animation_finished():
+	if state == DEAD:
+		queue_free()
+	pass # Replace with function body.

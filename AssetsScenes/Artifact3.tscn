@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tiles/Island2/vegetation/charactite.png" type="Texture" id=1]
+[ext_resource path="res://AssetsScenes/Artifact3.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -19,6 +20,7 @@ animations = [ {
 extents = Vector2( 30.5, 23.5 )
 
 [node name="Artifact3" type="Area2D"]
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -32,3 +34,5 @@ animation = "Idle"
 visible = false
 position = Vector2( -0.5, -1.5 )
 shape = SubResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_Artifact3_body_entered"]

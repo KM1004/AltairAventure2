@@ -754,14 +754,14 @@ animations = [ {
 height = 10.0
 
 [sub_resource type="CircleShape2D" id=185]
-radius = 111.005
+radius = 222.036
 
 [sub_resource type="CircleShape2D" id=186]
-radius = 48.3735
+radius = 106.738
 
 [sub_resource type="CapsuleShape2D" id=187]
-radius = 16.0
-height = 6.0
+radius = 31.0
+height = 82.0
 
 [node name="ogre" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 6 )
@@ -773,7 +773,7 @@ __meta__ = {
 scale = Vector2( 3, 3 )
 frames = SubResource( 55 )
 animation = "r_attack"
-frame = 1
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

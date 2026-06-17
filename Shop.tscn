@@ -118,6 +118,8 @@ margin_right = 206.0
 margin_bottom = 224.0
 text = "uac"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="Panel/BuyPotion" to="." method="_on_BuyPotion_pressed"]
 [connection signal="pressed" from="Panel/UpgradeSlash" to="." method="_on_UpgradeSlash_pressed"]
 [connection signal="pressed" from="Panel/UpgradeArrow" to="." method="_on_UpgradeArrow_pressed"]

@@ -52,7 +52,7 @@ export var energy = 15
 # NODES
 # ------------------------
 onready var sprite = $AnimatedSprite
-onready var nav = get_parent().get_node("Navigation2D")
+onready var nav = get_parent().get_parent().get_node("Navigation2D")
 
 
 # =========================================================

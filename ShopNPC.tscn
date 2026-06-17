@@ -36,5 +36,7 @@ region_rect = Rect2( 6.87343, 341.662, 17.1649, 33.8898 )
 visible = false
 shape = SubResource( 1 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

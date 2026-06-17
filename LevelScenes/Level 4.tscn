@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://TileMapSets/volcanoterrain_tiles1.tres" type="TileSet" id=1]
 [ext_resource path="res://TileMapSets/trees.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://AssetsScenes/lavaAreas.tscn" type="PackedScene" id=6]
 [ext_resource path="res://LevelScenes/Level 4.gd" type="Script" id=7]
+[ext_resource path="res://EnemiesScenes/Orc1.tscn" type="PackedScene" id=8]
 
 [node name="Level4" type="Node2D"]
 script = ExtResource( 7 )
@@ -89,3 +90,11 @@ polygon = PoolVector2Array( 3024, 1761, 3056, 1760, 3056, 1776, 3072, 1777, 3072
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 192, 380 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Orc" parent="Node" instance=ExtResource( 8 )]
+position = Vector2( 3785, 1621 )
+
+[node name="Orc2" parent="Node" instance=ExtResource( 8 )]
+position = Vector2( 3560, 1823 )

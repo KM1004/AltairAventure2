@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://TileMapSets/volcanoterrain_tiles1.tres" type="TileSet" id=1]
 [ext_resource path="res://TileMapSets/trees.tres" type="TileSet" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://EnemiesScenes/Orc1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Media/BackgroundMusic/Level4.mp3" type="AudioStream" id=9]
 [ext_resource path="res://EnemiesScenes/ogre.tscn" type="PackedScene" id=10]
+[ext_resource path="res://AssetsScenes/female_npc.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Direction.tscn" type="PackedScene" id=12]
+[ext_resource path="res://PortalVertical.tscn" type="PackedScene" id=13]
+[ext_resource path="res://boat.tscn" type="PackedScene" id=14]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 203, 634, 47, 699, 63, 585, 101, 477, 247, 457, 1983, 1108, 2163, 1028, 2203, 1236, 2107, 1432, 1663, 1016, 1819, 996, 1831, 1080, 1034, 2204, 241, 1978, -84, 1993, -114, 1759, 112, 1585, 618, 2008, 339, 2136, 1050, 778, 4431, 2016, 4195, 2020, 4179, 1940, 4239, 1880, 4399, 1876, 4683, 1872, 4771, 1532, 4807, 1680, 4447, 1736, 4659, 1412, 4235, 1336, 4288, 1600, 4175, 1548, 3983, 1432, 4039, 1638, 3655, 1548, 2060, 2620, 1804, 2861, 1683, 2786, 1313, 2416, 2471, 1432, 4077, 1918, 3888, 2152, 3473, 2091, 3279, 1440, 3533, 2295, 3352, 2439, 2823, 2635, 2430, 2763, 2196, 2816, 2719, 1276, 913, 2212, 716, 2220, 1339, 800, 2733, 2793, 1456, 2846, 1298, 2665, 3193, 2680, 1124, 2401, 1539, 892, 1431, 784, 22, 1359, 165, 1004, 764, 505, 510, 372, 307, 373 )
@@ -31,6 +35,7 @@ format = 1
 tile_data = PoolIntArray( 262149, 51, 0, 327681, 51, 0, 327683, 51, 0, 327690, 51, 0, 458764, 51, 0, 524289, 51, 0, 655376, 51, 0, 655377, 51, 0, 720897, 51, 0, 720909, 51, 0, 720914, 51, 0, 720916, 51, 0, 786455, 51, 0, 851970, 51, 0, 917505, 51, 0, 983048, 51, 0, 983051, 51, 0, 983066, 51, 0, 983069, 51, 0, 983074, 51, 0, 1048585, 51, 0, 1048607, 51, 0, 1245216, 51, 0, 1245224, 51, 0, 1376255, 51, 0, 1310753, 51, 0, 1310761, 51, 0, 1310766, 51, 0, 1310790, 51, 0, 1310791, 51, 0, 1376294, 51, 0, 1376303, 51, 0, 1376304, 51, 0, 1441857, 51, 0, 1507330, 51, 0, 1507362, 51, 0, 1507381, 51, 0, 1572864, 51, 0, 1572878, 51, 0, 1572920, 51, 0, 1572930, 51, 0, 1638411, 51, 0, 1638439, 51, 0, 1638457, 51, 0, 1638460, 51, 0, 1638474, 51, 0, 1703940, 51, 0, 1703942, 51, 0, 1703953, 51, 0, 1835015, 51, 0, 1835062, 51, 0, 1900603, 51, 0, 1900612, 51, 0, 1966144, 51, 0, 2031620, 51, 0, 2031623, 51, 0, 2031638, 51, 0, 2031642, 51, 0, 2031662, 51, 0, 2031667, 51, 0, 2031672, 51, 0, 2097161, 51, 0, 2097166, 51, 0, 2097167, 51, 0, 2097170, 51, 0, 2097191, 51, 0, 2097201, 51, 0, 2097214, 51, 0, 2162702, 51, 0, 2162734, 51, 0, 2162742, 51, 0, 2228268, 51, 0, 2293776, 51, 0, 2293788, 51, 0, 2424850, 51, 0, 2490403, 51, 0, 2490422, 51, 0, 2555955, 51, 0, 2555956, 51, 0, 2621473, 51, 0, 2687020, 51, 0, 2818078, 51, 0, 2818088, 51, 0, 2883611, 51, 0, 2883620, 51, 0, 2949143, 51, 0 )
 
 [node name="Plant" parent="." instance=ExtResource( 3 )]
+position = Vector2( 94, 34 )
 
 [node name="clusters" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -114,7 +119,7 @@ visible = false
 polygon = PoolVector2Array( 3024, 1761, 3056, 1760, 3056, 1776, 3072, 1777, 3072, 1792, 3056, 1793, 3056, 1824, 3024, 1823, 3025, 1792, 3008, 1793, 3008, 1777, 3023, 1778 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 543, 1245 )
+position = Vector2( 255, 131 )
 
 [node name="Node" type="Node" parent="."]
 
@@ -127,7 +132,6 @@ position = Vector2( 3560, 1823 )
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-visible = false
 navpoly = SubResource( 1 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -152,10 +156,23 @@ position = Vector2( 1578, 2168 )
 position = Vector2( 2605, 1907 )
 
 [node name="Orc" parent="Enemies" instance=ExtResource( 8 )]
-position = Vector2( 533, 1346 )
+position = Vector2( 446, 685 )
 
 [node name="Orc2" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 2784, 2047 )
 
 [node name="ogre2" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 1077, 1792 )
+
+[node name="female_nps" parent="." instance=ExtResource( 11 )]
+position = Vector2( 222, 44 )
+message = "Follow the Arrows to base"
+
+[node name="Direction" parent="." instance=ExtResource( 12 )]
+position = Vector2( 309, 250 )
+
+[node name="boat" parent="." instance=ExtResource( 14 )]
+position = Vector2( 4474, 2408 )
+
+[node name="PortalVertical" parent="." instance=ExtResource( 13 )]
+position = Vector2( 4475, 2410 )

@@ -97,7 +97,7 @@ extends Node
 
 onready var global_vars = get_node("/root/Globals")
 
-
+var last_score = 0
 var current_scene_name = ""
 
 func _ready():
@@ -254,6 +254,8 @@ func _on_Continue_pressed():
 # SCORE SYSTEM
 # ========================
 func _on_score_changed(value):
+	if value > last_score:
+		$scoreUp.play()
 	update_score(value)
 
 func update_score(point):

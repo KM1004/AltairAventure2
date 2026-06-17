@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/scoreUp.mp3-e945ba384c1e0d00800619220266adc7.mp3str"
+
+[deps]
+
+source_file="res://Media/AssetsSFX/scoreUp.mp3"
+dest_files=[ "res://.import/scoreUp.mp3-e945ba384c1e0d00800619220266adc7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

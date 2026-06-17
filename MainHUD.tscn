@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_00.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_04.png" type="Texture" id=2]
@@ -16,6 +16,12 @@
 [ext_resource path="res://MainHUD.gd" type="Script" id=14]
 [ext_resource path="res://icons8-menu-50.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/Assets/HeartsandPortions/free_icons1.png" type="Texture" id=16]
+[ext_resource path="res://Tiles/Island2/vegetation/logs - Copy.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Assets/Star Bar/Star Stage 5.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Assets/Star Bar/Star Stage 2.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Assets/Star Bar/Star Stage 1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Assets/Star Bar/Star Stage 3.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Assets/Star Bar/Star Stage 4.png" type="Texture" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -75,6 +81,47 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "range1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "range2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "range3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "range4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "range5",
+"speed": 5.0
+} ]
+
 [node name="MainHUD" type="Node"]
 script = ExtResource( 14 )
 
@@ -117,10 +164,9 @@ text = ":"
 
 [node name="SubMenuButton" type="Button" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.52549 )
-margin_left = 1016.0
-margin_top = 1.0
-margin_right = 1078.0
-margin_bottom = 57.0
+margin_left = 1024.0
+margin_right = 1086.0
+margin_bottom = 56.0
 icon = ExtResource( 15 )
 
 [node name="PotiionSprite" type="Sprite" parent="HUD"]
@@ -191,6 +237,40 @@ margin_top = 91.0
 margin_right = 168.0
 margin_bottom = 105.0
 text = "Game Pause"
+
+[node name="Wood" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="Wood"]
+modulate = Color( 1, 1, 1, 0.129412 )
+margin_top = 512.0
+margin_right = 197.0
+margin_bottom = 592.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Wood"]
+position = Vector2( 40, 552 )
+scale = Vector2( 0.796875, 0.875 )
+frames = SubResource( 3 )
+
+[node name="Label" type="Label" parent="Wood"]
+margin_left = 72.0
+margin_top = 552.0
+margin_right = 123.0
+margin_bottom = 568.0
+text = ":"
+
+[node name="Score" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="Score"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 968.0
+margin_top = 72.0
+margin_right = 1080.0
+margin_bottom = 144.0
+
+[node name="ScoreBar" type="AnimatedSprite" parent="Score"]
+position = Vector2( 1024, 104 )
+frames = SubResource( 4 )
+animation = "range1"
 
 [connection signal="pressed" from="HUD/SubMenuButton" to="." method="_on_SubMenu_pressed"]
 [connection signal="pressed" from="SubMenu/Panel/Quit" to="." method="_on_Quit_pressed"]

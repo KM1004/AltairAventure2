@@ -64,3 +64,8 @@ func _on_Area2D_area_entered(area):
 	if area.name == "player_arrow" or area.name == "player_sword":
 		energy -= 1
 		area.queue_free()
+
+	if energy <= 0:
+		Globals.add_score(5)
+		queue_free()
+		

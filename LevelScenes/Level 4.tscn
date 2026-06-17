@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://TileMapSets/volcanoterrain_tiles1.tres" type="TileSet" id=1]
 [ext_resource path="res://TileMapSets/trees.tres" type="TileSet" id=2]
 [ext_resource path="res://EnemiesScenes/Plant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TileMapSets/clusterSet.tres" type="TileSet" id=4]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://AssetsScenes/lavaAreas.tscn" type="PackedScene" id=6]
+[ext_resource path="res://LevelScenes/Level 4.gd" type="Script" id=7]
 
 [node name="Level4" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="terrain" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -24,3 +28,44 @@ tile_data = PoolIntArray( 262149, 51, 0, 327681, 51, 0, 327683, 51, 0, 327690, 5
 tile_set = ExtResource( 4 )
 format = 1
 tile_data = PoolIntArray( 1704000, 7, 0, 1704001, 0, 0, 1704004, 7, 0, 1769536, 6, 0 )
+
+[node name="LavaArea" type="Node" parent="."]
+
+[node name="Area2D" parent="LavaArea" instance=ExtResource( 6 )]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+polygon = PoolVector2Array( 303, 594, 319, 593, 319, 578, 333, 577, 333, 560, 351, 562, 352, 529, 368, 528, 368, 593, 351, 593, 351, 625, 335, 623, 335, 638, 304, 639 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+polygon = PoolVector2Array( 385, 513, 383, 496, 495, 498, 496, 544, 448, 545, 448, 530, 399, 529, 400, 512 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+polygon = PoolVector2Array( 1103, 962, 1086, 961, 1087, 977, 1056, 975, 1056, 1024, 1040, 1025, 1039, 1056, 1119, 1056, 1119, 1041, 1086, 1041, 1087, 993, 1103, 994 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+polygon = PoolVector2Array( 1151, 959, 1183, 960, 1184, 944, 1247, 944, 1247, 960, 1262, 960, 1263, 992, 1278, 991, 1280, 1008, 1310, 1008, 1312, 1024, 1321, 1024, 1327, 1024, 1328, 1072, 1312, 1071, 1312, 1056, 1296, 1057, 1296, 1070, 1263, 1073, 1263, 1055, 1184, 1057, 1184, 1040, 1169, 1040, 1168, 1008, 1150, 1008 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+polygon = PoolVector2Array( 1247, 912, 1263, 911, 1263, 927, 1278, 927, 1279, 945, 1296, 944, 1296, 959, 1310, 959, 1311, 976, 1327, 976, 1328, 946, 1313, 945, 1312, 929, 1296, 929, 1296, 914, 1279, 913, 1280, 897, 1248, 896 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+polygon = PoolVector2Array( 1265, 1152, 1295, 1152, 1295, 1137, 1311, 1136, 1311, 1120, 1281, 1120, 1280, 1136, 1264, 1137 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+polygon = PoolVector2Array( 1167, 1136, 1199, 1137, 1200, 1167, 1230, 1168, 1231, 1184, 1264, 1184, 1263, 1232, 1233, 1232, 1231, 1216, 1216, 1216, 1216, 1201, 1183, 1200, 1183, 1184, 1169, 1185 )
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+polygon = PoolVector2Array( 2088, 1703, 2198, 1702, 2203, 1718, 2218, 1720, 2219, 1732, 2234, 1735, 2236, 1750, 2245, 1749, 2250, 1762, 2263, 1767, 2266, 1780, 2279, 1779, 2285, 1798, 2296, 1797, 2297, 1812, 2310, 1814, 2315, 1826, 2325, 1830, 2333, 1844, 2345, 1846, 2349, 1859, 2360, 1861, 2362, 1874, 2376, 1878, 2379, 1959, 2374, 1964, 2362, 1963, 2360, 1977, 2348, 1981, 2344, 1992, 2333, 1995, 2330, 2010, 2316, 2013, 2312, 2028, 2300, 2029, 2297, 2041, 2282, 2047, 2280, 2057, 2269, 2060, 2264, 2073, 2255, 2076, 2250, 2089, 2238, 2093, 2234, 2104, 2223, 2110, 2218, 2120, 2206, 2124, 2202, 2138, 2113, 2140, 2099, 2140, 2090, 2142, 2081, 2126, 2071, 2123, 2065, 2109, 2057, 2110, 2050, 2094, 2040, 2092, 2034, 2080, 2025, 2077, 2021, 2064, 2013, 2062, 2007, 2060, 2004, 2052, 2001, 2046, 1995, 2046, 1989, 2041, 1987, 2031, 1981, 2030, 1973, 2026, 1972, 2018, 1969, 2013, 1963, 2013, 1958, 2009, 1954, 1998, 1948, 1997, 1941, 1993, 1941, 1985, 1937, 1980, 1932, 1981, 1925, 1975, 1924, 1969, 1919, 1964, 1914, 1964, 1910, 1960, 1908, 1887, 1908, 1875, 1918, 1882, 1923, 1863, 1936, 1862, 1939, 1847, 1955, 1847, 1955, 1831, 1970, 1830, 1973, 1813, 1979, 1813, 1985, 1810, 1991, 1799, 2002, 1798, 2002, 1781, 2012, 1784, 2019, 1774, 2026, 1770, 2035, 1764, 2037, 1750, 2050, 1751, 2053, 1735, 2064, 1735, 2068, 1722, 2078, 1721, 2084, 1707 )
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="LavaArea/Area2D"]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 192, 380 )

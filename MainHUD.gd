@@ -93,13 +93,10 @@
 #	pass # Replace with function body.
 
 
-
-
-
-
 extends Node
 
 onready var global_vars = get_node("/root/Globals")
+
 
 var current_scene_name = ""
 
@@ -111,11 +108,21 @@ func _ready():
 	global_vars.connect("health_changed", self, "update_health")
 	global_vars.connect("coins_changed", self, "_on_coins_changed")
 	global_vars.connect("potions_changed", self, "_on_potions_changed")
-
+	global_vars.connect("wood_changed", self,"_on_wood_changed")
+	global_vars.connect("score_changed", self, "_on_score_changed")
+	
+	
 	# FORCE INITIAL UPDATE
 	update_health(global_vars.Health)
 	update_coins(global_vars.Coins)
 	update_potions(global_vars.Potions)
+	update_wood(global_vars.Wood)
+	update_score(global_vars.Score)
+	
+	
+	
+	
+	
 
 
 func _process(delta):
@@ -146,7 +153,10 @@ func _handle_scene_change(scene_name):
 			hud.show()
 		if submenu:
 			submenu.hide()
-
+	if scene_name == "Level 3":
+		$Wood.show()
+	else:
+		$Wood.hide()
 
 # ========================
 # HEALTH SYSTEM
@@ -201,6 +211,7 @@ func update_potions(amount):
 	if has_node("HUD/Potion"):
 		$HUD/Potion.text = "Potions: " + str(amount)
 
+
 # ========================
 # HUD VISIBILITY
 # ========================
@@ -227,8 +238,44 @@ func _on_Quit_pressed():
 func _on_Continue_pressed():
 	$SubMenu.hide()
 	get_tree().paused = false
+	
+
+# ========================
+# SCORE SYSTEM
+# ========================
+func _on_score_changed(value):
+	update_score(value)
+
+func update_score(point):
+	var points = ""
+	#if has_node("HUD/Score"):
+	#	$HUD/Score.text = "Score: " + str(amount)
+
+	if point < 20:
+		points = "range1"
+	elif point < 40:
+		points = "range2"
+	elif point < 60:
+		points = "range3"
+	elif point < 80:
+		points = "range4"
+	else:
+		point = "range5"
+	
+	$Score/ScoreBar.play(points)
+	
+		
+		
 
 
+# ========================
+# WOOD SYSTEM
+# ========================
 
+func _on_wood_changed(value):
+	update_wood(value)
 
+func update_wood(amount):
+	if has_node("Wood/Label"):
+		$Wood/Label.text = str(amount)
 

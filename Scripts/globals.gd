@@ -47,14 +47,20 @@ extends Node
 signal health_changed(new_health)
 signal coins_changed(new_coins)
 signal potions_changed(new_amount)
+signal wood_changed(new_wood)
+signal score_changed(new_score)
 
 var _health = 100
 var _coins = 0
 var _potions = 5
+var _wood = 0
+var _score = 0
 
 var Health setget set_Health, get_Health
 var Coins setget set_Coins, get_Coins
 var Potions setget set_Potions, get_Potions
+var Wood setget set_wood, get_wood
+var Score setget set_score, get_score
 
 var potion_cooldown = 5.0
 var can_use_potion = true
@@ -63,6 +69,8 @@ func _ready():
 	Health = 100
 	Coins = 0
 	Potions = 5
+	Wood = 0
+	Score = 0
 
 
 # ========================
@@ -165,3 +173,36 @@ func use_potion():
 func start_cooldown():
 	yield(get_tree().create_timer(potion_cooldown), "timeout")
 	can_use_potion = true
+	
+
+# ========================
+# SCORE
+# ========================
+func set_score(value):
+	_score = max(value, 0)
+	emit_signal("score_changed", _score)
+
+func get_score():
+	return _score
+
+func add_score(amount):
+	set_score(_score + amount)
+
+
+
+# ========================
+# LEVEL 3 wood collection 
+# ========================
+
+func set_wood(value):
+	_wood = max(value,0)
+	emit_signal("wood_changed", _wood)
+	
+
+func get_wood():
+	return _wood
+
+
+func add_wood(amount):
+	set_wood(Wood + amount)
+

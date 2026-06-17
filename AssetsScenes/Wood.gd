@@ -1,13 +1,12 @@
+#wood
 extends Area2D
-
-signal wood_colected
 
 var wood_taken = false
 
+onready var globals = get_node("/root/Globals")
+
 func _on_Wood_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and !wood_taken:
 		wood_taken = true
-		
-		emit_signal("wood_signal")
-		#get_node("/root/MainHud").wood += 1
+		globals.add_wood(1)
 		queue_free()

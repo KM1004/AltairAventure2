@@ -1,10 +1,43 @@
+#LEVEL 3
 extends Node2D
 
 onready var player = $Player
 onready var water = $water
 onready var water_timer = $WaterTimer
+onready var ladders = $ladders
+
+const REQUIRED_WOOD = 10
+
+onready var globals = get_node("/root/Globals")
+
+
 
 var player_in_water = false
+
+var wood = 0
+var wood_needed = 10
+var ladder_cells = []
+
+
+	
+func _ready():
+	$ladders.visible = false
+	
+	if !globals.is_connected("wood_changed", self, "_on_wood_changed"):
+		globals.connect("wood_changed", self, "_on_wood_changed")
+		
+	_on_wood_changed(globals.Wood)
+		
+
+func _on_wood_changed(amount):
+	if amount >= REQUIRED_WOOD:
+		build_ladder()
+
+ 
+func build_ladder():
+	print("building ladder")
+	ladders.visible = true
+
 
 func _process(delta):
 	var cell = water.world_to_map(player.global_position)
@@ -22,9 +55,10 @@ func _process(delta):
 
 func _on_WaterTimer_timeout():
 	if player_in_water:
-		player.lives -= 1
-		#print("Took water damage! Lives:", player.lives)
+		globals.Health -= 5
 		
+		
+
 
 
 

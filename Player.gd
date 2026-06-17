@@ -57,13 +57,9 @@ var current_weapon = "slash"   # or "bow"
 
 func _ready():
 	var map = get_parent().get_node("TileMap")
-	var map_limits = map.get_used_rect()
-	var map_cellsize = map.cell_size
-#	var cam = $Camera2D
-#	cam.limit_left = map_limits.position.x * map_cellsize.x
-#	cam.limit_top = map_limits.position.y * map_cellsize.y
-#	cam.limit_right = map_limits.end.x * map_cellsize.x
-#	cam.limit_bottom = map_limits.end.y * map_cellsize.y
+	#var map_limits = map.get_used_rect()
+	#var map_cellsize = map.cell_size
+#	
 	
 	# 🔥 THIS LINE FIXES YOUR ISSUE
 	$Sprite.connect("animation_finished", self, "_on_Sprite_animation_finished")

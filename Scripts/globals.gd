@@ -51,6 +51,7 @@ signal artifact_collected(id)
 signal wood_changed(new_wood)
 signal score_changed(new_score)
 
+var player = null
 var _health = 100
 var _coins = 0
 var _potions = 5
@@ -76,6 +77,7 @@ var potion_cooldown = 5.0
 var can_use_potion = true
 var next_spawn_position = Vector2.ZERO
 var loading_text = ""
+var save_data = {}
 
 func _ready():
 	Health = 100
@@ -236,3 +238,65 @@ func get_wood():
 func add_wood(amount):
 	set_wood(Wood + amount)
 
+func save_game():
+	var player = self.player
+	
+	# 🔥 fallback if not assigned
+	if player == null:
+		player = get_tree().get_root().find_node("Player", true, false)
+	
+	# ❌ STILL NULL → STOP
+	if player == null:
+		print("ERROR: Player not found, cannot save")
+		return
+	
+	save_data = {
+		"scene": get_tree().current_scene.filename,
+		"player_x": player.global_position.x,
+		"player_y": player.global_position.y,
+		"coins": Coins,
+		"potions": Potions,
+		"slash_damage": slash_damage,
+		"arrow_damage": arrow_damage,
+		"potion_heal": potion_heal_amount
+	}
+	
+	var file = File.new()
+	file.open("user://save.dat", File.WRITE)
+	file.store_var(save_data)
+	file.close()
+
+func load_game():
+	var file = File.new()
+	
+	if not file.file_exists("user://save.dat"):
+		return false
+	
+	file.open("user://save.dat", File.READ)
+	save_data = file.get_var()
+	file.close()
+	
+	return true
+
+func apply_save():
+	get_tree().change_scene(save_data["scene"])
+	
+	yield(get_tree(), "idle_frame")  # wait 1 frame
+	yield(get_tree(), "idle_frame")  # 🔥 wait extra (important)
+
+	var player = get_tree().get_root().find_node("Player", true, false)
+	
+	if player == null:
+		print("ERROR: Player not found after loading")
+		return
+	
+	player.position = Vector2(
+		save_data["player_x"],
+		save_data["player_y"]
+	)
+	
+	Coins = save_data["coins"]
+	Potions = save_data["potions"]
+	slash_damage = save_data["slash_damage"]
+	arrow_damage = save_data["arrow_damage"]
+	potion_heal_amount = save_data["potion_heal"]

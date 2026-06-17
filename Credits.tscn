@@ -24,5 +24,6 @@ position = Vector2( 518, 300 )
 scale = Vector2( 0.809375, 0.833333 )
 stream = ExtResource( 3 )
 autoplay = true
+max_distance = 9.22337e+18
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PortalVertical.tscn" type="PackedScene" id=3]
 [ext_resource path="res://FrozenLake.gd" type="Script" id=4]
+[ext_resource path="res://Media/BackgroundMusic/Level2.mp3" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 271.75, 10 )
@@ -52,3 +53,7 @@ position = Vector2( 548, 368 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border2"]
 position = Vector2( 735.5, 366.5 )
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+autoplay = true

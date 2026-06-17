@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://BeachTileSet.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://SnowBeach.gd" type="Script" id=8]
 [ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://ShopNPC.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Media/BackgroundMusic/Level2.mp3" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -411,3 +412,8 @@ spawn_position = Vector2( 640, 736 )
 
 [node name="ShopNPC" parent="." instance=ExtResource( 10 )]
 position = Vector2( 578, 503 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+max_distance = 9.22337e+18

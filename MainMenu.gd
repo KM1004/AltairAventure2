@@ -26,6 +26,10 @@ func _on_Play_pressed():
 
 
 func _on_Continue_pressed():
+	var g = get_node("/root/Globals")
+	
+	if g.load_game():
+		g.apply_save()
 	pass # Replace with function body.
 
 

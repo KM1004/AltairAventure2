@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ForestTileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Forest2.gd" type="Script" id=4]
+[ext_resource path="res://SnowTileSet.tres" type="TileSet" id=5]
+[ext_resource path="res://Media/BackgroundMusic/Level1.mp3" type="AudioStream" id=6]
 
 [node name="Forest2" type="Node2D"]
 script = ExtResource( 4 )
@@ -27,3 +29,14 @@ tile_data = PoolIntArray( -65536, 13, 0, -65535, 13, 0, -65534, 13, 0, -65533, 1
 position = Vector2( 64, 1024 )
 target_scene = "res://Forest.tscn"
 spawn_position = Vector2( 1200, 32 )
+
+[node name="TileMap3" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 393223, 70, 0, 458785, 70, 0, 786466, 70, 0, 917505, 70, 0, 1114114, 70, 0, 1376259, 70, 0, 1703950, 70, 0, 1703953, 70, 0, 1900549, 70, 0, 1966086, 70, 0 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+max_distance = 2e+13

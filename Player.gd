@@ -21,6 +21,7 @@ var ArrowScene = preload("res://Arrow.tscn")
 var current_weapon = "slash"   # or "bow"
 
 func _ready():
+	get_node("/root/Globals").player = self   # ✅ ADD THIS
 	var map = get_parent().get_node("TileMap")
 	var map_limits = map.get_used_rect()
 	var map_cellsize = map.cell_size
@@ -29,7 +30,6 @@ func _ready():
 #	cam.limit_top = map_limits.position.y * map_cellsize.y
 #	cam.limit_right = map_limits.end.x * map_cellsize.x
 #	cam.limit_bottom = map_limits.end.y * map_cellsize.y
-
 	var g = get_node("/root/Globals")
 	
 	if g.next_spawn_position != Vector2.ZERO:

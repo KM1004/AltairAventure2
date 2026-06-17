@@ -11,7 +11,7 @@
 [ext_resource path="res://Media/AltairSFX/player shoot arrow.mp3" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 13.5 )
+extents = Vector2( 9.5, 13 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -526,8 +526,7 @@ data = PoolByteArray( 255, 251, 212, 68, 0, 8, 228, 184, 114, 35, 128, 195, 103,
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 0, 0.5 )
+position = Vector2( 0.5, 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]

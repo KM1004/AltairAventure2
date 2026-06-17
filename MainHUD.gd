@@ -242,6 +242,8 @@ func _on_SubMenu_pressed():
 
 func _on_Quit_pressed():
 	get_tree().paused = false
+	var g = get_node("/root/Globals")
+	g.save_game()
 	get_tree().change_scene("res://MainMenu.tscn")
 
 

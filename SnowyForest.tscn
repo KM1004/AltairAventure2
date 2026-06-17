@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -76,6 +76,7 @@
 [ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=74]
 [ext_resource path="res://PortalVertical.tscn" type="PackedScene" id=75]
 [ext_resource path="res://SnowyForest.gd" type="Script" id=76]
+[ext_resource path="res://Media/BackgroundMusic/Level2.mp3" type="AudioStream" id=77]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 10.5 )
@@ -1226,3 +1227,7 @@ position = Vector2( 1266, 111 )
 scale = Vector2( 1, 1.5 )
 target_scene = "res://FrozenLake.tscn"
 spawn_position = Vector2( 32, 96 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 77 )
+autoplay = true

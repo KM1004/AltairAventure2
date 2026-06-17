@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ChatGPT Image May 13, 2026, 10_29_04 AM.png" type="Texture" id=2]
@@ -7,6 +7,16 @@
 [ext_resource path="res://PalmTreeBig.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ForestTileSet.tres" type="TileSet" id=6]
 [ext_resource path="res://Beach.gd" type="Script" id=7]
+[ext_resource path="res://Media/BackgroundMusic/Level1.mp3" type="AudioStream" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5, 471 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 470 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 851, 5 )
 
 [node name="Beach" type="Node2D"]
 script = ExtResource( 7 )
@@ -53,3 +63,34 @@ position = Vector2( 461, 241 )
 
 [node name="3" parent="SmallPalmTree" instance=ExtResource( 4 )]
 position = Vector2( 59.0001, 304 )
+
+[node name="Border" type="Node" parent="."]
+
+[node name="BorderLeft" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/BorderLeft"]
+position = Vector2( -5, 470 )
+shape = SubResource( 1 )
+
+[node name="BorderRight" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/BorderRight"]
+position = Vector2( 1682, 470 )
+shape = SubResource( 2 )
+
+[node name="BorderTop" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/BorderTop"]
+position = Vector2( 841, -5 )
+shape = SubResource( 3 )
+
+[node name="BorderBottom" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/BorderBottom"]
+position = Vector2( 841, 945 )
+shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+max_distance = 2e+13

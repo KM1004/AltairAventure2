@@ -763,7 +763,7 @@ radius = 106.738
 radius = 31.0
 height = 82.0
 
-[node name="ogre" type="KinematicBody2D"]
+[node name="ogre" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -773,7 +773,7 @@ __meta__ = {
 scale = Vector2( 3, 3 )
 frames = SubResource( 55 )
 animation = "r_attack"
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

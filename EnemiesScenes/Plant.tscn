@@ -620,7 +620,7 @@ radius = 65.9697
 radius = 38.0
 height = 0.0
 
-[node name="Plant" type="KinematicBody2D"]
+[node name="Plant" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true

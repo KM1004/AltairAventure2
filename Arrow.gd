@@ -1,5 +1,5 @@
 extends Area2D
-
+onready var global_vars = get_node("/root/Globals")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -31,7 +31,7 @@ func _physics_process(delta):
 
 func _on_Arrow_body_entered(body):
 	if body.has_method("take_damage"):
-		body.take_damage(3)
+		body.take_damage(global_vars.arrow_damage)
 
 	queue_free()
 	pass # Replace with function body.

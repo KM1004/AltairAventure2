@@ -140,7 +140,7 @@ func _handle_scene_change(scene_name):
 	var hud = get_node_or_null("HUD")
 	var submenu = get_node_or_null("SubMenu")
 	
-	if scene_name == "MainMenu" or scene_name == "Credits" or scene_name == "Help":
+	if scene_name == "MainMenu" or scene_name == "Credits" or scene_name == "Help" or scene_name == "GameOver1" or scene_name == "Shop":
 		if hud:
 			hud.hide()
 		if submenu:

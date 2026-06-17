@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://BeachTileSet.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://EnemiesScenes/ogre.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SnowBeach.gd" type="Script" id=8]
 [ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ShopNPC.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -407,3 +408,6 @@ position = Vector2( 910, 307 )
 position = Vector2( 512, 4 )
 target_scene = "res://SnowyForest.tscn"
 spawn_position = Vector2( 640, 736 )
+
+[node name="ShopNPC" parent="." instance=ExtResource( 10 )]
+position = Vector2( 578, 503 )

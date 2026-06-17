@@ -50,9 +50,16 @@ signal potions_changed(new_amount)
 signal artifact_collected(id)
 
 var _health = 100
-var _coins = 0
+var _coins = 100000
 var _potions = 5
 var artifacts = [false, false, false]  
+var potion_heal_amount = 10
+var slash_damage = 3
+var arrow_damage = 3
+var potion_cost = 10
+var slash_cost = 20
+var arrow_cost = 20
+var potion_upgrade_cost = 100
 
 var Health setget set_Health, get_Health
 var Coins setget set_Coins, get_Coins
@@ -66,7 +73,7 @@ var next_spawn_position = Vector2.ZERO
 
 func _ready():
 	Health = 100
-	Coins = 0
+	Coins = 100000
 	Potions = 5
 
 func reset_globals():
@@ -155,7 +162,7 @@ func use_potion():
 	set_Potions(_potions)
 
 	# HEAL but clamp to 100
-	_health += 10
+	_health += potion_heal_amount
 	_health = clamp(_health, 0, 100)
 	set_Health(_health)
 

@@ -137,7 +137,7 @@ func start_slash():
 	# 🔥 ADD THIS BLOCK
 	for body in $SlashHitbox.get_overlapping_bodies():
 		if body.has_method("take_damage"):
-			body.take_damage(3)
+			body.take_damage(global_vars.slash_damage)
 	
 	$SFX_Slash.play()  # 🔊 ADD THIS
 	$Sprite.play("Slash_" + facing)
@@ -261,7 +261,7 @@ func _on_SlashHitbox_body_entered(body):
 		return
 
 	if body.has_method("take_damage"):
-		body.take_damage(3)
+		body.take_damage(global_vars.arrow_damage)
 	pass # Replace with function body.
 	
 func game_over():

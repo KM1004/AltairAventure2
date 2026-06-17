@@ -1,25 +1,46 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://AssetsScenes/male_npc.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AssetsScenes/StoryBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://boat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://AssetsScenes/Chief.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/NPCs/NPC_Characters_v1.0/Male1.png" type="Texture" id=5]
+[ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 160, 480, 32, 48 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 86, 29.25 )
 
 [node name="CutScene" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 496.0
+margin_top = -408.0
+margin_right = 1336.0
 margin_bottom = 320.0
 color = Color( 0.576471, 0.780392, 0.129412, 1 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_left = -136.0
+margin_top = -400.0
 margin_bottom = 320.0
 color = Color( 0.0862745, 0.556863, 0.898039, 1 )
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 margin_left = -136.0
 margin_top = 320.0
-margin_right = 504.0
+margin_right = 1328.0
 margin_bottom = 640.0
 color = Color( 0.0862745, 0.556863, 0.898039, 1 )
 
@@ -27,7 +48,32 @@ color = Color( 0.0862745, 0.556863, 0.898039, 1 )
 position = Vector2( 9, 328 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 96, 240 )
+position = Vector2( 824, 88 )
 
-[node name="male_npc" parent="." instance=ExtResource( 1 )]
-position = Vector2( 248, 200 )
+[node name="Person" type="Area2D" parent="."]
+position = Vector2( 584, -312 )
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Person"]
+position = Vector2( 400, 400 )
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Person"]
+position = Vector2( 422, 405.25 )
+shape = SubResource( 3 )
+
+[node name="StoryBox" parent="Person" instance=ExtResource( 1 )]
+visible = false
+margin_left = -64.0
+margin_top = 176.0
+margin_right = 568.0
+margin_bottom = 360.0
+
+[node name="PortalHorizontal" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 336 )
+target_scene = "res://MainMenu.tscn"
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
+
+[connection signal="body_exited" from="Person" to="Person" method="_on_Person_body_exited"]

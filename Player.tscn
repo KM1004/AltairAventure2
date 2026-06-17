@@ -536,7 +536,7 @@ animation = "Idle_Down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.7, 0.8 )
 
 [node name="SlashHitbox" type="Area2D" parent="." groups=["player_weapon"]]
 collision_layer = 2

@@ -253,12 +253,14 @@ position = Vector2( 40, 552 )
 scale = Vector2( 0.796875, 0.875 )
 frames = SubResource( 3 )
 
-[node name="Label" type="Label" parent="Wood"]
+[node name="woodLabel" type="Label" parent="Wood"]
 margin_left = 72.0
 margin_top = 552.0
 margin_right = 123.0
 margin_bottom = 568.0
+custom_fonts/font = ExtResource( 13 )
 text = ":"
+uppercase = true
 
 [node name="Score" type="CanvasLayer" parent="."]
 

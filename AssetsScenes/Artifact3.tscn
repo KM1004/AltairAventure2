@@ -35,4 +35,6 @@ visible = false
 position = Vector2( -0.5, -1.5 )
 shape = SubResource( 3 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_Artifact3_body_entered"]

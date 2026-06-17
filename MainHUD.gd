@@ -288,6 +288,6 @@ func _on_wood_changed(value):
 	update_wood(value)
 
 func update_wood(amount):
-	if has_node("Wood/Label"):
-		$Wood/Label.text = str(amount)
+	if has_node("Wood/woodLabel"):
+		$Wood/woodLabel.text = str(amount)
 

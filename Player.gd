@@ -1,38 +1,3 @@
-#extends KinematicBody2D
-#
-#export var speed = 200
-#var velocity = Vector2.ZERO
-#
-#func _ready():
-#	# Camera limits (optional)
-#	var map = get_parent().get_node("TileMap")
-#	var map_limits = map.get_used_rect()
-#	var map_cellsize = map.cell_size
-#	var cam = $Camera2D
-#	cam.limit_left = map_limits.position.x * map_cellsize.x
-#	cam.limit_top = map_limits.position.y * map_cellsize.y
-#	cam.limit_right = map_limits.end.x * map_cellsize.x
-#	cam.limit_bottom = map_limits.end.y * map_cellsize.y
-#
-#func _physics_process(delta):
-#	var input_vector = Vector2.ZERO
-#
-#	# Get input strength for 4 directions
-#	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-#	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-#
-#	# Normalize to prevent fast diagonal movement
-#	input_vector = input_vector.normalized()
-#
-#	if input_vector != Vector2.ZERO:
-#		velocity = input_vector * speed
-#	else:
-#		velocity = Vector2.ZERO
-#
-#	# Apply movement and handle collisions
-#	velocity = move_and_slide(velocity)
-
-
 extends KinematicBody2D
 
 onready var global_vars = get_node("/root/Globals")
@@ -57,16 +22,28 @@ var current_weapon = "slash"   # or "bow"
 
 func _ready():
 	var map = get_parent().get_node("TileMap")
-	#var map_limits = map.get_used_rect()
-	#var map_cellsize = map.cell_size
-#	
+	var map_limits = map.get_used_rect()
+	var map_cellsize = map.cell_size
+#	var cam = $Camera2D
+#	cam.limit_left = map_limits.position.x * map_cellsize.x
+#	cam.limit_top = map_limits.position.y * map_cellsize.y
+#	cam.limit_right = map_limits.end.x * map_cellsize.x
+#	cam.limit_bottom = map_limits.end.y * map_cellsize.y
+
+	var g = get_node("/root/Globals")
+	
+	if g.next_spawn_position != Vector2.ZERO:
+		global_position = g.next_spawn_position
+		g.next_spawn_position = Vector2.ZERO
+
+	$SlashHitbox.monitoring = false   # 🔥 THIS FIXES IDLE DAMAGE
 	
 	# 🔥 THIS LINE FIXES YOUR ISSUE
 	$Sprite.connect("animation_finished", self, "_on_Sprite_animation_finished")
 
 func _physics_process(delta):
-#	if Input.is_action_just_pressed("use_potion"):
-#		global_vars.use_potion()
+	if global_vars.Health <= 0:
+		game_over()
 	
 	if is_dead:
 		return
@@ -156,6 +133,12 @@ func start_slash():
 
 	update_hitbox_position()   # 🔥 ADD THIS
 	$SlashHitbox.monitoring = true
+	
+	# 🔥 ADD THIS BLOCK
+	for body in $SlashHitbox.get_overlapping_bodies():
+		if body.has_method("take_damage"):
+			body.take_damage(global_vars.slash_damage)
+	
 	$SFX_Slash.play()  # 🔊 ADD THIS
 	$Sprite.play("Slash_" + facing)
 	#$SFX_Slash.stop()
@@ -187,16 +170,19 @@ func spawn_arrow():
 	match facing:
 		"Right":
 			offset = Vector2(20, 0)
-			arrow.direction = Vector2.RIGHT
+			arrow.set_direction(Vector2.RIGHT)
+
 		"Left":
 			offset = Vector2(-20, 0)
-			arrow.direction = Vector2.LEFT
+			arrow.set_direction(Vector2.LEFT)
+
 		"Down":
 			offset = Vector2(0, 20)
-			arrow.direction = Vector2.DOWN
+			arrow.set_direction(Vector2.DOWN)
+
 		"Up":
 			offset = Vector2(0, -20)
-			arrow.direction = Vector2.UP
+			arrow.set_direction(Vector2.UP)
 
 	arrow.global_position = $Muzzle.global_position + offset
 
@@ -268,3 +254,19 @@ func _on_Sprite_animation_finished():
 
 	elif is_dead:
 		pass
+
+
+func _on_SlashHitbox_body_entered(body):
+	if not is_attacking:
+		return
+
+	if body.has_method("take_damage"):
+		body.take_damage(global_vars.arrow_damage)
+	pass # Replace with function body.
+	
+func game_over():
+	# Optional: reset globals if needed
+#	global_vars.reset_globals()
+
+	# Switch to Game Over scene properly
+	get_tree().change_scene("res://GameOver1.tscn")

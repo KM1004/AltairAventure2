@@ -932,8 +932,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=138]
-radius = 19.0
-height = 58.0
+radius = 6.0
+height = 6.0
 
 [sub_resource type="CircleShape2D" id=139]
 radius = 129.139
@@ -942,20 +942,27 @@ radius = 129.139
 radius = 68.0294
 
 [sub_resource type="CapsuleShape2D" id=141]
-radius = 18.0
-height = 44.0
+radius = 14.0
+height = 6.0
 
 [node name="Orc" type="KinematicBody2D"]
+position = Vector2( 1, 1 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
+attack_range = 25
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 2, 2 )
+position = Vector2( -1, -1 )
+scale = Vector2( 0.96875, 0.945313 )
 frames = SubResource( 1 )
-animation = "b_idle"
-frame = 2
+animation = "r_walk"
+<<<<<<< Updated upstream
+frame = 1
+=======
+frame = 4
+>>>>>>> Stashed changes
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -963,23 +970,28 @@ visible = false
 shape = SubResource( 138 )
 
 [node name="DetectRange" type="Area2D" parent="."]
+position = Vector2( -1, -1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRange"]
 visible = false
 shape = SubResource( 139 )
 
 [node name="AttackArea" type="Area2D" parent="."]
+position = Vector2( -1, -1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-visible = false
 shape = SubResource( 140 )
 
 [node name="TakeDamage" type="Area2D" parent="."]
+position = Vector2( -1, -1 )
+collision_mask = 4294967295
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TakeDamage"]
-visible = false
+position = Vector2( 0, -3 )
 shape = SubResource( 141 )
 
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="DetectRange" to="." method="_on_DetectRange_body_entered"]
 [connection signal="body_exited" from="DetectRange" to="." method="_on_DetectRange_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]

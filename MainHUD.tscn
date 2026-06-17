@@ -52,7 +52,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "60%Heath",
+"name": "60%Health",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ) ],
@@ -62,7 +62,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "80%Heath",
+"name": "80%Health",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],

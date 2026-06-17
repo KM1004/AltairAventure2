@@ -51,7 +51,7 @@ export var energy = 15
 # NODES
 # ------------------------
 onready var sprite = $AnimatedSprite
-onready var nav = get_parent().get_node("Navigation2D")
+onready var nav = get_parent().get_parent().get_node("Navigation2D")
 
 
 # =========================================================
@@ -97,7 +97,7 @@ func attack():
 	
 	# Deal damage ONCE
 	if player:
-#		var globals = get_node("/root/Globals")
+		$attack.play()
 		global_vars.Health -= attack_damage
 		MainHud.update_health(global_vars.Health)
 
@@ -235,6 +235,7 @@ func _on_TakeDamage_body_entered(body):
 # DEATH
 # =========================================================
 func die():
+	$die.play()
 	state = DEAD
 	velocity = Vector2.ZERO
 	
@@ -245,6 +246,7 @@ func take_damage(amount):
 	print("ENEMY HIT! Energy:", energy)
 
 	if energy <= 0:
+		global_vars.Score += 10
 		die()
 	else:
 		state = HURT

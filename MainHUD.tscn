@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_00.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Assets/HeartsandPortions/destribuir/health_04.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Sprites/Assets/Star Bar/Star Stage 1.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/Assets/Star Bar/Star Stage 3.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/Assets/Star Bar/Star Stage 4.png" type="Texture" id=22]
+[ext_resource path="res://Media/AssetsSFX/scoreUp.mp3" type="AudioStream" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -164,9 +165,10 @@ text = ":"
 
 [node name="SubMenuButton" type="Button" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.52549 )
-margin_left = 959.0
-margin_right = 1021.0
-margin_bottom = 56.0
+margin_left = 992.0
+margin_top = 1.0
+margin_right = 1054.0
+margin_bottom = 57.0
 icon = ExtResource( 15 )
 
 [node name="PotiionSprite" type="Sprite" parent="HUD"]
@@ -251,12 +253,14 @@ position = Vector2( 40, 552 )
 scale = Vector2( 0.796875, 0.875 )
 frames = SubResource( 3 )
 
-[node name="Label" type="Label" parent="Wood"]
+[node name="woodLabel" type="Label" parent="Wood"]
 margin_left = 72.0
 margin_top = 552.0
 margin_right = 123.0
 margin_bottom = 568.0
+custom_fonts/font = ExtResource( 13 )
 text = ":"
+uppercase = true
 
 [node name="Score" type="CanvasLayer" parent="."]
 
@@ -268,9 +272,12 @@ margin_right = 1048.0
 margin_bottom = 136.0
 
 [node name="ScoreBar" type="AnimatedSprite" parent="Score"]
-position = Vector2( 992, 96 )
+position = Vector2( 1024, 104 )
 frames = SubResource( 4 )
 animation = "range1"
+
+[node name="scoreUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 23 )
 
 [connection signal="pressed" from="HUD/SubMenuButton" to="." method="_on_SubMenu_pressed"]
 [connection signal="pressed" from="SubMenu/Panel/Quit" to="." method="_on_Quit_pressed"]

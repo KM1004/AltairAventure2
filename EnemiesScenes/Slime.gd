@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+onready var globals = get_node("/root/Globals")
 var player = null
 var energy = 2
 
@@ -27,6 +27,7 @@ func _physics_process(delta):
 		# Animations
 		if abs(direction.x) > abs(direction.y):
 			$AnimatedSprite.play("s_walk")
+			$hop.play()
 			$AnimatedSprite.flip_h = direction.x < 0
 		elif direction.y > 0:
 			$AnimatedSprite.play("d_walk")
@@ -61,11 +62,13 @@ func _on_Player_detector_body_exited(body):
 # ============================
 
 func _on_Area2D_area_entered(area):
-	if area.name == "player_arrow" or area.name == "player_sword":
+	if area.is_in_group("player_group"):
 		energy -= 1
-		area.queue_free()
+		if area.is_in_group("player_arrow"):
+			area.queue_free()
 
 	if energy <= 0:
-		Globals.add_score(5)
+		globals.Score += 5
+		$die.play()
 		queue_free()
 		

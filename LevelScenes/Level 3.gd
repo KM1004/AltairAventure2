@@ -4,24 +4,37 @@ extends Node2D
 onready var player = $Player
 onready var water = $water
 onready var water_timer = $WaterTimer
-onready var ladders = $ladders
+onready var ladder1 = $ladders
+onready var ladder2 = $ladders2
 
-const REQUIRED_WOOD = 10
+
 
 onready var globals = get_node("/root/Globals")
 
-
+const first_ladder_wood = 10
+const second_ladder_wood = 15
 
 var player_in_water = false
 
-var wood = 0
-var wood_needed = 10
-var ladder_cells = []
+
+var damage_timer = 0.0
+var damage_interval = 3.0
 
 
+
+
+func _process(delta):
+	if player_in_water:
+		damage_timer += delta
+		
+		if damage_timer >= damage_interval:
+			damage_timer = 0.0
+			globals.Health -= 1
 	
 func _ready():
-	$ladders.visible = false
+	#hide both ladders
+	ladder1.visible = false
+	ladder2.visible = false
 	
 	if !globals.is_connected("wood_changed", self, "_on_wood_changed"):
 		globals.connect("wood_changed", self, "_on_wood_changed")
@@ -30,35 +43,35 @@ func _ready():
 		
 
 func _on_wood_changed(amount):
-	if amount >= REQUIRED_WOOD:
+	#first seciton appears
+	if amount >= first_ladder_wood:
 		build_ladder()
+		
+	if amount >= second_ladder_wood:
+		build_ladder2()
+	
 
  
 func build_ladder():
-	print("building ladder")
-	ladders.visible = true
+	if !ladder1.visible:
+		#sfx ladder building
+		ladder1.visible = true
+
+func build_ladder2():
+	if !ladder2.visible:
+		#sfx buildladder2
+		ladder2.visible = true
+	
 
 
-func _process(delta):
-	var cell = water.world_to_map(player.global_position)
-	# Returns -1 if there is no tile
-	var on_water = water.get_cellv(cell) != -1
-
-	if on_water and !player_in_water:
+func _on_waterDamageArea_body_entered(body):
+	if body.name == "Player":
 		player_in_water = true
-		water_timer.start()
+		#SFX WATER
+		damage_timer =0.0
 
-	elif !on_water and player_in_water:
+
+func _on_waterDamageArea_body_exited(body):
+	if body.name == "Player":
 		player_in_water = false
-		water_timer.stop()
-		
-
-func _on_WaterTimer_timeout():
-	if player_in_water:
-		globals.Health -= 5
-		
-		
-
-
-
-
+		damage_timer=0.0

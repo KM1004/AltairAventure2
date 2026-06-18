@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://BeachTileSet.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://ShopNPC.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Media/BackgroundMusic/Level2.mp3" type="AudioStream" id=11]
+[ext_resource path="res://boat.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -402,9 +403,6 @@ position = Vector2( 823, 520 )
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 3 )
 
-[node name="ogre" parent="." instance=ExtResource( 7 )]
-position = Vector2( 910, 307 )
-
 [node name="PortalHorizontal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 512, 4 )
 target_scene = "res://SnowyForest.tscn"
@@ -417,3 +415,11 @@ position = Vector2( 578, 503 )
 stream = ExtResource( 11 )
 autoplay = true
 max_distance = 9.22337e+18
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="ogre" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 910, 307 )
+
+[node name="boat" parent="." instance=ExtResource( 12 )]
+position = Vector2( 944, 625 )

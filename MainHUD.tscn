@@ -24,6 +24,19 @@
 [ext_resource path="res://Sprites/Assets/Star Bar/Star Stage 4.png" type="Texture" id=22]
 [ext_resource path="res://Media/AssetsSFX/scoreUp.mp3" type="AudioStream" id=23]
 
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
@@ -82,19 +95,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ SubResource( 2 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 18 ) ],
@@ -125,6 +125,28 @@ animations = [ {
 
 [node name="MainHUD" type="Node"]
 script = ExtResource( 14 )
+
+[node name="Wood" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="Wood"]
+modulate = Color( 1, 1, 1, 0.129412 )
+margin_top = 512.0
+margin_right = 197.0
+margin_bottom = 592.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Wood"]
+position = Vector2( 40, 552 )
+scale = Vector2( 0.796875, 0.875 )
+frames = SubResource( 3 )
+
+[node name="woodLabel" type="Label" parent="Wood"]
+margin_left = 72.0
+margin_top = 552.0
+margin_right = 123.0
+margin_bottom = 568.0
+custom_fonts/font = ExtResource( 13 )
+text = ":"
+uppercase = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -211,6 +233,20 @@ margin_bottom = 121.0
 custom_fonts/font = ExtResource( 13 )
 text = "Artifacts:"
 
+[node name="Score" type="CanvasLayer" parent="HUD"]
+
+[node name="Panel" type="Panel" parent="HUD/Score"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 936.0
+margin_top = 64.0
+margin_right = 1048.0
+margin_bottom = 136.0
+
+[node name="ScoreBar" type="AnimatedSprite" parent="HUD"]
+position = Vector2( 1024, 104 )
+frames = SubResource( 4 )
+animation = "range1"
+
 [node name="SubMenu" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="SubMenu"]
@@ -239,42 +275,6 @@ margin_top = 91.0
 margin_right = 168.0
 margin_bottom = 105.0
 text = "Game Pause"
-
-[node name="Wood" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="Wood"]
-modulate = Color( 1, 1, 1, 0.129412 )
-margin_top = 512.0
-margin_right = 197.0
-margin_bottom = 592.0
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Wood"]
-position = Vector2( 40, 552 )
-scale = Vector2( 0.796875, 0.875 )
-frames = SubResource( 3 )
-
-[node name="woodLabel" type="Label" parent="Wood"]
-margin_left = 72.0
-margin_top = 552.0
-margin_right = 123.0
-margin_bottom = 568.0
-custom_fonts/font = ExtResource( 13 )
-text = ":"
-uppercase = true
-
-[node name="Score" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="Score"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 936.0
-margin_top = 64.0
-margin_right = 1048.0
-margin_bottom = 136.0
-
-[node name="ScoreBar" type="AnimatedSprite" parent="Score"]
-position = Vector2( 1024, 104 )
-frames = SubResource( 4 )
-animation = "range1"
 
 [node name="scoreUp" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 23 )

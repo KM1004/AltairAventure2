@@ -25,6 +25,8 @@ func _on_Potion_body_entered(body):
 	if body.name == "Player":
 		picked = true
 		
+		$SFXPickup.play()
 		global_vars.Potions += 1
 		
+#		yield($SFXPickup, "finished")   # ✅ wait for sound
 		queue_free()

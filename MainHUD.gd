@@ -142,7 +142,7 @@ func _handle_scene_change(scene_name):
 	var hud = get_node_or_null("HUD")
 	var submenu = get_node_or_null("SubMenu")
 	
-	if scene_name == "MainMenu" or scene_name == "Credits" or scene_name == "Help" or scene_name == "GameOver1" or scene_name == "Shop":
+	if scene_name == "MainMenu" or scene_name == "Credits" or scene_name == "Help" or scene_name == "GameOver1" or scene_name == "Shop"or scene_name == "BoatPortal":
 		if hud:
 			hud.hide()
 		if submenu:
@@ -276,7 +276,7 @@ func update_score(point):
 	else:
 		point = "range5"
 	
-	$Score/ScoreBar.play(points)
+	$HUD/ScoreBar.play(points)
 	
 		
 		

@@ -173,7 +173,7 @@ __meta__ = {
 scale = Vector2( 2, 1 )
 frames = SubResource( 25 )
 animation = "d_walk"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -188,7 +188,7 @@ shape = SubResource( 27 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 28 )
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -206,3 +206,4 @@ stream = ExtResource( 6 )
 [connection signal="body_exited" from="Player_detector" to="." method="_on_Player_detector_body_exited"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_AttackArea_body_exited"]

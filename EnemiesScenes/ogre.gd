@@ -3,6 +3,8 @@ onready var global_vars = get_node("/root/Globals")
 var can_attack = true
 export var attack_cooldown = 1.0   # seconds
 export var attack_damage = 5
+var CoinScene = preload("res://Coin.tscn")
+var PotionScene = preload("res://Potion.tscn")
 # ------------------------
 # STATE SYSTEM
 # ------------------------
@@ -238,6 +240,7 @@ func die():
 	$die.play()
 	state = DEAD
 	velocity = Vector2.ZERO
+	drop_loot()
 	
 	
 	
@@ -250,6 +253,22 @@ func take_damage(amount):
 		die()
 	else:
 		state = HURT
+
+func drop_loot():
+	# Random chance
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+
+	# Always drop coin
+	var coin = CoinScene.instance()
+	coin.global_position = global_position
+	get_parent().add_child(coin)
+
+	# 50% chance to drop potion
+	if rng.randi_range(0, 1) == 1:
+		var potion = PotionScene.instance()
+		potion.global_position = global_position
+		get_parent().add_child(potion)
 
 
 func _on_AnimatedSprite_animation_finished():

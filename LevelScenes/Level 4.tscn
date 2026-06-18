@@ -144,15 +144,27 @@ format = 1
 
 [node name="ogre" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 1711, 1273 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ogre5" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 2104, 2564 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ogre3" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 1578, 2168 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ogre4" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 2605, 1907 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Orc" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 446, 685 )
@@ -162,6 +174,9 @@ position = Vector2( 2784, 2047 )
 
 [node name="ogre2" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 1077, 1792 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="female_nps" parent="." instance=ExtResource( 11 )]
 position = Vector2( 222, 44 )

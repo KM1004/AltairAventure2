@@ -6,6 +6,10 @@ var energy = 2
 var speed = 80
 var player_in_range = false
 
+export var attack_damage = 2
+export var attack_cooldown = 1.0
+var can_attack = true
+
 
 func _ready():
 	pass
@@ -72,3 +76,18 @@ func _on_Area2D_area_entered(area):
 		$die.play()
 		queue_free()
 		
+
+func attack():
+	if not can_attack:
+		return
+
+	can_attack = false
+
+	if player:
+		$attack.play()
+		globals.Health -= attack_damage
+		MainHud.update_health(globals.Health)
+
+	yield(get_tree().create_timer(attack_cooldown), "timeout")
+
+	can_attack = true

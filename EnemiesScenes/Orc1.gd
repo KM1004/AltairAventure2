@@ -3,6 +3,8 @@ onready var global_vars = get_node("/root/Globals")
 var can_attack = true
 export var attack_cooldown = 1.0   # seconds
 export var attack_damage = 5
+var CoinScene = preload("res://Coin.tscn")
+var PotionScene = preload("res://Potion.tscn")
 # ------------------------
 # STATE SYSTEM
 # ------------------------
@@ -26,7 +28,6 @@ export var walk_speed = 75
 export var patrol_speed = 100
 export var gravity = 1000
 export var attack_range = 50
-export var points = 10
 
 var velocity = Vector2.ZERO
 var direction = Vector2.RIGHT
@@ -98,7 +99,6 @@ func attack():
 	
 	# Deal damage ONCE
 	if player:
-#		var globals = get_node("/root/Globals")
 		$attack.play()
 		global_vars.Health -= attack_damage
 		MainHud.update_health(global_vars.Health)
@@ -229,8 +229,6 @@ func _on_TakeDamage_body_entered(body):
 
 		if energy <= 0:
 			die()
-			global_vars.Score += 15
-			
 		else:
 			state = HURT
 
@@ -242,6 +240,7 @@ func die():
 	$die.play()
 	state = DEAD
 	velocity = Vector2.ZERO
+	drop_loot()
 	
 	
 	
@@ -250,12 +249,30 @@ func take_damage(amount):
 	print("ENEMY HIT! Energy:", energy)
 
 	if energy <= 0:
+		global_vars.Score += 10
 		die()
 	else:
 		state = HURT
+
+func drop_loot():
+	# Random chance
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+
+	# Always drop coin
+	var coin = CoinScene.instance()
+	coin.global_position = global_position
+	get_parent().add_child(coin)
+
+	# 50% chance to drop potion
+	if rng.randi_range(0, 1) == 1:
+		var potion = PotionScene.instance()
+		potion.global_position = global_position
+		get_parent().add_child(potion)
 
 
 func _on_AnimatedSprite_animation_finished():
 	if state == DEAD:
 		queue_free()
+		
 	pass # Replace with function body.

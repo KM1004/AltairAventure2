@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ChatGPT Image May 13, 2026, 10_29_04 AM.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Sprites/NPCs/NPC_Characters_v1.0/Female1.png" type="Texture" id=9]
 [ext_resource path="res://AssetsScenes/StoryBox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Person.gd" type="Script" id=11]
+[ext_resource path="res://boat.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 471 )
@@ -38,6 +39,7 @@ animations = [ {
 extents = Vector2( 140, 27 )
 
 [node name="Beach" type="Node2D"]
+scale = Vector2( 1.00093, 1 )
 script = ExtResource( 7 )
 
 [node name="Background" type="Sprite" parent="."]
@@ -134,5 +136,8 @@ margin_right = 184.0
 margin_bottom = 37.0
 skip_to_scene = "res://StroryScripts/FstInstruction.txt"
 story_line_file = "res://StroryScripts/StartStory.txt"
+
+[node name="boat" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1550.56, 780 )
 
 [connection signal="body_exited" from="Person" to="Person" method="_on_Person_body_exited"]

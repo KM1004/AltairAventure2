@@ -18,9 +18,9 @@ func _ready():
 
 func _on_Coin_body_entered(body):
 	if body.name == "Player":
-		global_vars.Health -= 10
+#		global_vars.Health -= 10
 		Globals.Coins += 10
-		MainHud.update_health(global_vars.Health)
+#		MainHud.update_health(global_vars.Health)
 		MainHud.update_coins(global_vars.Coins)
 		queue_free()#delete the node
 	pass # Replace with function body.

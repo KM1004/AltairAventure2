@@ -934,14 +934,14 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=138]
-radius = 19.0
-height = 58.0
+radius = 16.0
+height = 16.0
 
 [sub_resource type="CircleShape2D" id=139]
-radius = 129.139
+radius = 96.0469
 
 [sub_resource type="CircleShape2D" id=140]
-radius = 68.0294
+radius = 33.0151
 
 [sub_resource type="CapsuleShape2D" id=141]
 radius = 18.0
@@ -949,31 +949,26 @@ height = 44.0
 
 [node name="Orc" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 2, 2 )
+position = Vector2( -2.27374e-13, 1 )
+scale = Vector2( 1.28125, 1.25 )
 frames = SubResource( 1 )
 animation = "r_walk"
-frame = 4
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 138 )
 
 [node name="DetectRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRange"]
-visible = false
 shape = SubResource( 139 )
 
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-visible = false
 shape = SubResource( 140 )
 
 [node name="TakeDamage" type="Area2D" parent="."]

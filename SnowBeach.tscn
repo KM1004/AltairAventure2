@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://BeachTileSet.tres" type="TileSet" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://ShopNPC.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Media/BackgroundMusic/Level2.mp3" type="AudioStream" id=11]
 [ext_resource path="res://boat.tscn" type="PackedScene" id=12]
+[ext_resource path="res://EnemiesScenes/Orc1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://EnemiesScenes/Slime.tscn" type="PackedScene" id=14]
+[ext_resource path="res://EnemiesScenes/Plant.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -420,6 +423,20 @@ max_distance = 9.22337e+18
 
 [node name="ogre" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 910, 307 )
+__meta__ = {
+"_edit_group_": true
+}
+attack_cooldown = 3.0
+
+[node name="Orc" parent="Enemies" instance=ExtResource( 13 )]
+position = Vector2( 644, 334 )
+attack_cooldown = 3.0
 
 [node name="boat" parent="." instance=ExtResource( 12 )]
 position = Vector2( 944, 625 )
+
+[node name="Slime" parent="." instance=ExtResource( 14 )]
+position = Vector2( 485, 414 )
+
+[node name="Plant" parent="." instance=ExtResource( 15 )]
+position = Vector2( 360, 423 )

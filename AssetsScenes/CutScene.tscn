@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://AssetsScenes/StoryBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://AssetsScenes/Chief.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/NPCs/NPC_Characters_v1.0/Male1.png" type="Texture" id=5]
 [ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TileMapSets/terrain_tiles.tres" type="TileSet" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -77,5 +78,11 @@ target_scene = "res://MainMenu.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 1
+
+[node name="houses" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1441755, 68, 0, -1376228, 790, 0, -1376227, 790, 0, -1376226, 790, 0, -1376225, 790, 0, -1376224, 790, 0, -1376222, 790, 0, -1376221, 790, 0, -1376220, 790, 0, -1376219, 68, 0, -1376218, 763, 0, -1376217, 763, 0, -1376216, 763, 0, -1376215, 763, 0, -1376214, 763, 0, -1310692, 68, 0, -1310691, 68, 0, -1310690, 68, 0, -1310689, 68, 0, -1310688, 68, 0, -1310686, 68, 0, -1310685, 68, 0, -1310684, 68, 0, -1310683, 68, 0, -1310682, 68, 0, -1310681, 68, 0, -1310680, 68, 0, -1310679, 68, 0, -1310678, 68, 0, -1245147, 68, 0, -1179620, 763, 0, -1179619, 763, 0, -1179618, 788, 0, -1179617, 788, 0, -1179616, 788, 0, -1179615, 788, 0, -1179614, 763, 0, -1179611, 68, 0, -1179609, 908, 0, -1179608, 908, 0, -1179607, 908, 0, -1179606, 908, 0, -1114075, 68, 0, -1048548, 790, 0, -1048547, 765, 0, -1048546, 765, 0, -1048545, 765, 0, -1048544, 765, 0, -1048543, 765, 0, -1048542, 763, 0, -1048537, 935, 0, -1048536, 935, 0, -1048535, 935, 0, -1048534, 935, 0 )
 
 [connection signal="body_exited" from="Person" to="Person" method="_on_Person_body_exited"]

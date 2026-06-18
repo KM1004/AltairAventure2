@@ -42,7 +42,7 @@ func _physics_process(delta):
 func _on_AttackArea_body_entered(body):
 	if body.name == "Player":
 		player = body
-		#subtract player's lives
+		Globals.Health -= 5
 
 # ============================
 # PLAYER DETECTION
@@ -66,7 +66,7 @@ func _on_Player_detector_body_exited(body):
 # ============================
 
 func _on_Area2D_area_entered(area):
-	if area.is_in_group("player_group"):
+	if area.is_in_group("player_weapon"):
 		energy -= 1
 		if area.is_in_group("player_arrow"):
 			area.queue_free()

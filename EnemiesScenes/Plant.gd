@@ -52,8 +52,8 @@ func _on_DetectArea_body_exited(body):
 
 func _on_AttackRange_body_entered(body):
 	if body.name == altair:
-		print(body.name)
 		player_in_attack_range = true
+		globals.Health -= 5
 
 
 func _on_AttackRange_body_exited(body):
@@ -139,6 +139,7 @@ func update_animation():
 					sprite.play("f_die")
 				"back":
 					sprite.play("b_die")
+			
 		
 
 func take_damage(amount):
@@ -151,16 +152,29 @@ func take_damage(amount):
 	else:
 		state = HURT
 
+# ============================
+# ARROW / SWORD DAMAGE
+# ============================
+#player_weapon/#player_arrow
 func _on_TakeDamage_body_entered(body):
-	print("hurt")
+	if body.is_in_group("player_weapon"):
+		energy -= 5
+	if energy <=0:
+		globals.Score += 10
+		die()
+		queue_free()
+	else:
+		state = HURT
 
 
 func _on_TakeDamage_body_exited(body):
 	pass # Replace with function body.
 
 func die():
-	energy = 0
+	energy <= 0
 	state = DEAD
+	queue_free()
+	
 	
 	
 	player_detected = false

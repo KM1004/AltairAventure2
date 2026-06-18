@@ -8,7 +8,7 @@ onready var ladder1 = $ladders
 onready var ladder2 = $ladders2
 
 
-
+onready var global_vars = get_node("/root/Globals")
 onready var globals = get_node("/root/Globals")
 
 const first_ladder_wood = 10
@@ -32,6 +32,12 @@ func _process(delta):
 			globals.Health -= 1
 	
 func _ready():
+	var screen_size = OS.get_screen_size()
+	var window_size = OS.get_window_size()
+
+	var centered_position = (screen_size - window_size) / 2
+	global_vars.next_scene = "res://LevelScenes/Level 3.tscn"
+	OS.set_window_position(centered_position)
 	#hide both ladders
 	ladder1.visible = false
 	ladder2.visible = false
@@ -40,6 +46,7 @@ func _ready():
 		globals.connect("wood_changed", self, "_on_wood_changed")
 		
 	_on_wood_changed(globals.Wood)
+	
 		
 
 func _on_wood_changed(amount):

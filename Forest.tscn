@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ForestTileSet.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=5]
 [ext_resource path="res://Media/BackgroundMusic/Level1.mp3" type="AudioStream" id=6]
 [ext_resource path="res://EnemiesScenes/Orc1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://EnemiesScenes/Slime.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.5, 51.5 )
@@ -97,10 +98,31 @@ position = Vector2( 1196, 341 )
 [node name="11" parent="Orc_Enemy" instance=ExtResource( 7 )]
 position = Vector2( 1192, 739 )
 
-[node name="12" parent="Orc_Enemy" instance=ExtResource( 7 )]
-position = Vector2( 639, 486 )
-
 [node name="Navigation2D" type="Navigation2D" parent="."]
+visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 2 )
+
+[node name="Slime_Enemy" type="Node" parent="."]
+
+[node name="1" parent="Slime_Enemy" instance=ExtResource( 8 )]
+position = Vector2( 71, 770 )
+
+[node name="2" parent="Slime_Enemy" instance=ExtResource( 8 )]
+position = Vector2( 385, 351 )
+
+[node name="3" parent="Slime_Enemy" instance=ExtResource( 8 )]
+position = Vector2( 118, 102 )
+
+[node name="4" parent="Slime_Enemy" instance=ExtResource( 8 )]
+position = Vector2( 981, 926 )
+
+[node name="5" parent="Slime_Enemy" instance=ExtResource( 8 )]
+position = Vector2( 555, 474 )
+
+[node name="6" parent="Slime_Enemy" instance=ExtResource( 8 )]
+position = Vector2( 693, 131 )
+
+[node name="7" parent="Slime_Enemy" instance=ExtResource( 8 )]
+position = Vector2( 1062, 477 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://TileMapSets/volcanoterrain_tiles1.tres" type="TileSet" id=1]
 [ext_resource path="res://TileMapSets/trees.tres" type="TileSet" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://AssetsScenes/female_npc.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Direction.tscn" type="PackedScene" id=12]
 [ext_resource path="res://PortalVertical.tscn" type="PackedScene" id=13]
+[ext_resource path="res://boat.tscn" type="PackedScene" id=14]
+[ext_resource path="res://EnemiesScenes/Slime.tscn" type="PackedScene" id=15]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 203, 634, 47, 699, 63, 585, 101, 477, 247, 457, 1983, 1108, 2163, 1028, 2203, 1236, 2107, 1432, 1663, 1016, 1819, 996, 1831, 1080, 1034, 2204, 241, 1978, -84, 1993, -114, 1759, 112, 1585, 618, 2008, 339, 2136, 1050, 778, 4431, 2016, 4195, 2020, 4179, 1940, 4239, 1880, 4399, 1876, 4683, 1872, 4771, 1532, 4807, 1680, 4447, 1736, 4659, 1412, 4235, 1336, 4288, 1600, 4175, 1548, 3983, 1432, 4039, 1638, 3655, 1548, 2060, 2620, 1804, 2861, 1683, 2786, 1313, 2416, 2471, 1432, 4077, 1918, 3888, 2152, 3473, 2091, 3279, 1440, 3533, 2295, 3352, 2439, 2823, 2635, 2430, 2763, 2196, 2816, 2719, 1276, 913, 2212, 716, 2220, 1339, 800, 2733, 2793, 1456, 2846, 1298, 2665, 3193, 2680, 1124, 2401, 1539, 892, 1431, 784, 22, 1359, 165, 1004, 764, 505, 510, 372, 307, 373 )
@@ -136,6 +138,7 @@ navpoly = SubResource( 1 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
+max_distance = 9.22337e+18
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 1
@@ -178,9 +181,26 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Slime" parent="Enemies" instance=ExtResource( 15 )]
+
+[node name="Slime2" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 589, 627 )
+
+[node name="Slime3" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 854, 939 )
+
+[node name="Slime4" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 752, 1580 )
+
+[node name="Slime5" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 1265, 1527 )
+
+[node name="Slime6" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 490, 1586 )
+
 [node name="female_nps" parent="." instance=ExtResource( 11 )]
 position = Vector2( 222, 44 )
-message = "Follow the Arrows to base"
+message = "drop the jewels at the altar"
 
 [node name="Direction" parent="." instance=ExtResource( 12 )]
 position = Vector2( 309, 250 )
@@ -192,3 +212,6 @@ target_scene = "res://AssetsScenes/CutScene.tscn"
 [node name="female_nps2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 4092, 1690 )
 message = "Place the artifacts at the center"
+
+[node name="boat" parent="." instance=ExtResource( 14 )]
+position = Vector2( -63, -96 )

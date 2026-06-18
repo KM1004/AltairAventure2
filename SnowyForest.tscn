@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -77,6 +77,7 @@
 [ext_resource path="res://PortalVertical.tscn" type="PackedScene" id=75]
 [ext_resource path="res://SnowyForest.gd" type="Script" id=76]
 [ext_resource path="res://Media/BackgroundMusic/Level2.mp3" type="AudioStream" id=77]
+[ext_resource path="res://EnemiesScenes/Orc1.tscn" type="PackedScene" id=78]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 10.5 )
@@ -1193,6 +1194,11 @@ extents = Vector2( 6, 16 )
 } ]
 70/z_index = 0
 
+[sub_resource type="NavigationPolygon" id=14]
+vertices = PoolVector2Array( 1038, 158, 1253, 161, 1260, 742, 686, 723, 676, 583, 19, 26, 1040, 25, 371, 580, 19, 730, 367, 739 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 0, 4, 7 ), PoolIntArray( 8, 5, 7, 9 ) ]
+outlines = [ PoolVector2Array( 676, 583, 371, 580, 367, 739, 19, 730, 19, 26, 1040, 25, 1038, 158, 1253, 161, 1260, 742, 686, 723 ) ]
+
 [node name="SnowyForest" type="Node2D"]
 script = ExtResource( 76 )
 
@@ -1231,3 +1237,43 @@ spawn_position = Vector2( 32, 96 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 77 )
 autoplay = true
+
+[node name="Orc_Enemy" type="Node" parent="."]
+
+[node name="1" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 243, 641 )
+
+[node name="2" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 158, 418 )
+
+[node name="3" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 177, 103 )
+
+[node name="4" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 351, 305 )
+
+[node name="5" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 684, 302 )
+
+[node name="6" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 547, 392 )
+
+[node name="7" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 865, 560 )
+
+[node name="8" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 793, 93 )
+
+[node name="9" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 385, 512 )
+
+[node name="10" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 1148, 631 )
+
+[node name="11" parent="Orc_Enemy" instance=ExtResource( 78 )]
+position = Vector2( 1206, 310 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 14 )

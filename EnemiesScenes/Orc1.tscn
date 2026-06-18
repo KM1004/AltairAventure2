@@ -955,7 +955,7 @@ position = Vector2( -2.27374e-13, 1 )
 scale = Vector2( 1.28125, 1.25 )
 frames = SubResource( 1 )
 animation = "r_walk"
-frame = 2
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -964,11 +964,13 @@ shape = SubResource( 138 )
 [node name="DetectRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRange"]
+visible = false
 shape = SubResource( 139 )
 
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+visible = false
 shape = SubResource( 140 )
 
 [node name="TakeDamage" type="Area2D" parent="."]

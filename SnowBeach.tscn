@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://SnowTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://BeachTileSet.tres" type="TileSet" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Potion.tscn" type="PackedScene" id=6]
-[ext_resource path="res://EnemiesScenes/ogre.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SnowBeach.gd" type="Script" id=8]
 [ext_resource path="res://PortalHorizontal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://ShopNPC.tscn" type="PackedScene" id=10]
@@ -419,17 +418,38 @@ stream = ExtResource( 11 )
 autoplay = true
 max_distance = 9.22337e+18
 
-[node name="Enemies" type="Node" parent="."]
+[node name="Orc_Enemies" type="Node" parent="."]
 
-[node name="ogre" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 910, 307 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="1" parent="Orc_Enemies" instance=ExtResource( 13 )]
+position = Vector2( 572, 246 )
 attack_cooldown = 3.0
 
-[node name="Orc" parent="Enemies" instance=ExtResource( 13 )]
-position = Vector2( 644, 334 )
+[node name="2" parent="Orc_Enemies" instance=ExtResource( 13 )]
+position = Vector2( 53, 108 )
+attack_cooldown = 3.0
+
+[node name="3" parent="Orc_Enemies" instance=ExtResource( 13 )]
+position = Vector2( 53, 342 )
+attack_cooldown = 3.0
+
+[node name="4" parent="Orc_Enemies" instance=ExtResource( 13 )]
+position = Vector2( 234, 127 )
+attack_cooldown = 3.0
+
+[node name="5" parent="Orc_Enemies" instance=ExtResource( 13 )]
+position = Vector2( 463, 118 )
+attack_cooldown = 3.0
+
+[node name="6" parent="Orc_Enemies" instance=ExtResource( 13 )]
+position = Vector2( 325, 310 )
+attack_cooldown = 3.0
+
+[node name="7" parent="Orc_Enemies" instance=ExtResource( 13 )]
+position = Vector2( 747, 143 )
+attack_cooldown = 3.0
+
+[node name="8" parent="Orc_Enemies" instance=ExtResource( 13 )]
+position = Vector2( 858, 279 )
 attack_cooldown = 3.0
 
 [node name="boat" parent="." instance=ExtResource( 12 )]

@@ -776,22 +776,26 @@ animation = "r_attack"
 frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 scale = Vector2( 3, 3 )
 shape = SubResource( 56 )
 
 [node name="DetectRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRange"]
+visible = false
 shape = SubResource( 185 )
 
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+visible = false
 shape = SubResource( 186 )
 
 [node name="TakeDamage" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TakeDamage"]
+visible = false
 shape = SubResource( 187 )
 
 [node name="die" type="AudioStreamPlayer2D" parent="."]

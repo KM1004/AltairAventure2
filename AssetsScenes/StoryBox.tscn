@@ -30,6 +30,13 @@ margin_right = 536.0
 margin_bottom = 120.0
 script = ExtResource( 4 )
 
+[node name="SkipToScene" type="Button" parent="."]
+margin_left = 272.0
+margin_top = 128.0
+margin_right = 472.0
+margin_bottom = 168.0
+text = "skip to Goal"
+
 [node name="SkipStoryLines" type="Button" parent="."]
 margin_left = 64.0
 margin_top = 128.0
@@ -44,4 +51,5 @@ scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "person"
 
+[connection signal="pressed" from="SkipToScene" to="ChatBox" method="_on_SkipToScene_pressed"]
 [connection signal="pressed" from="SkipStoryLines" to="ChatBox" method="_on_SkipStoryLines_pressed"]

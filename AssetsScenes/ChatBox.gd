@@ -5,23 +5,26 @@ extends Label
 var drawTextSpeed: int = 0
 var chatterLimit: int = 70 # max characters in chatbox
 var dialog = [] # list of story lines
-
+var current_file =""
 var page = 0
 
 func _loadDialogFromFile(fname):
+	current_file = fname
 	
+	dialog.clear()
+	page = 0
+	drawTextSpeed = 0
+
 	var f = File.new()
 	f.open(fname, File.READ)
-	var index = 1
+
 	while not f.eof_reached():
-		var line = f.get_line()
-		dialog.append(line)
-		index+=1
+		dialog.append(f.get_line())
+
 	f.close()
-	
-	# initialise first line of chat and set the chat box text
-	set_text(dialog[page])
-	pass
+
+	if dialog.size() > 0:
+		set_text(dialog[0])
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -53,3 +56,9 @@ func _on_SkipStoryLines_pressed():
 	drawTextSpeed = 0
 	_showChatter()
 	pass # Replace with function body.
+
+
+func _on_SkipToScene_pressed():
+	if get_parent().skip_to_scene != "":
+		_loadDialogFromFile(get_parent().skip_to_scene)
+	

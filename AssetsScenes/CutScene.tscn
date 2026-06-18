@@ -68,6 +68,7 @@ margin_left = -64.0
 margin_top = 176.0
 margin_right = 568.0
 margin_bottom = 360.0
+skip_to_scene = "res://StroryScripts/ScndInstruction.txt"
 story_line_file = "res://StroryScripts/EndStory.txt"
 
 [node name="PortalHorizontal" parent="." instance=ExtResource( 6 )]

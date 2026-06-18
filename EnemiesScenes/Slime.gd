@@ -42,7 +42,7 @@ func _physics_process(delta):
 func _on_AttackArea_body_entered(body):
 	if body.name == "Player":
 		player = body
-		Globals.Health -= 5
+		Globals.Health -= 10
 
 # ============================
 # PLAYER DETECTION
@@ -62,20 +62,21 @@ func _on_Player_detector_body_exited(body):
 
 
 # ============================
-# ARROW / SWORD DAMAGE
+# DAMAGE AREA
 # ============================
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("player_weapon"):
-		energy -= 1
-		if area.is_in_group("player_arrow"):
-			area.queue_free()
-
-	if energy <= 0:
-		globals.Score += 5
-		$die.play()
+		energy -= 5
+	if energy <=0:
+		globals.Score += 10
+		die()
 		queue_free()
+	
 		
+func die():
+	energy <= 0
+	queue_free()	
 
 func attack():
 	if not can_attack:
